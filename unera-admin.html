@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-1BvDVWLr3QCC20uHhUDi27eDFVJpk1uMQJGIWKUks2I=' 'sha256-UIrFqcaitjA3OKa9mHKajg3N+0Y7tW9+y0o3QmMFeZQ=' 'sha256-0O7iB6zr9x0r6X6eWYITC9V5q+yWCGAoFvcysBGbY9Q='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Admin console and team · Minh Nguyen</title><meta name="description" content="Admin console and team: An operations console where every screen ships with its bad days, and the team got to cut what AI added."><meta name="author" content="Minh Nguyen"><meta property="og:title" content="Admin console and team · Minh Nguyen"><meta property="og:description" content="Admin console and team: An operations console where every screen ships with its bad days, and the team got to cut what AI added."><meta property="og:type" content="website"><meta property="og:image" content="https://minhdesign.xyz/og.png"><meta name="theme-color" content="#002a42"><link rel="icon" href="favicon.svg" type="image/svg+xml"><script src="boot.js"></script><link rel="stylesheet" href="./assets/Base.BJOL_-Ho.css"></head><body class="min-h-dvh"><a class="skip" href="#main">Skip to content</a><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(function(){let e=async e=>{await(await e())()};(self.Astro||(self.Astro={})).load=e,window.dispatchEvent(new Event(`astro:load`))})();</script><script>(function(){function e(t){"@babel/helpers - typeof";return e=typeof Symbol==`function`&&typeof Symbol.iterator==`symbol`?function(e){return typeof e}:function(e){return e&&typeof Symbol==`function`&&e.constructor===Symbol&&e!==Symbol.prototype?`symbol`:typeof e},e(t)}function t(t,n){if(e(t)!=`object`||!t)return t;var r=t[Symbol.toPrimitive];if(r!==void 0){var i=r.call(t,n||`default`);if(e(i)!=`object`)return i;throw TypeError(`@@toPrimitive must return a primitive value.`)}return(n===`string`?String:Number)(t)}function n(n){var r=t(n,`string`);return e(r)==`symbol`?r:r+``}function r(e,t,r){return(t=n(t))in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}let i=/* @__PURE__ */ new Set([`__proto__`,`constructor`,`prototype`]);{let e={0:e=>a(e),1:e=>n(e),2:e=>new RegExp(e),3:e=>new Date(e),4:e=>new Map(n(e)),5:e=>new Set(n(e)),6:e=>BigInt(e),7:e=>new URL(e),8:e=>new Uint8Array(e),9:e=>new Uint16Array(e),10:e=>new Uint32Array(e),11:e=>1/0*e},t=t=>{let[n,r]=t;return n in e?e[n](r):void 0},n=e=>e.map(t),a=e=>typeof e!=`object`||!e?e:Object.fromEntries(Object.entries(e).map(([e,n])=>[e,t(n)]));class o extends HTMLElement{constructor(...e){super(...e),r(this,`Component`,void 0),r(this,`hydrator`,void 0),r(this,`hydrate`,async()=>{var e;if(!this.hydrator||!this.isConnected)return;let t=(e=this.parentElement)==null?void 0:e.closest(`astro-island[ssr]`);if(t){t.addEventListener(`astro:hydrate`,this.hydrate,{once:!0});return}let n=this.querySelectorAll(`astro-slot`),r={},i=this.querySelectorAll(`template[data-astro-template]`);for(let e of i){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`data-astro-template`)||`default`]=e.innerHTML,e.remove())}for(let e of n){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`name`)||`default`]=e.innerHTML)}let o;try{o=this.hasAttribute(`props`)?a(JSON.parse(this.getAttribute(`props`))):{}}catch(e){let t=this.getAttribute(`component-url`)||`<unknown>`,n=this.getAttribute(`component-export`);throw n&&(t+=` (export ${n})`),console.error(`[hydrate] Error parsing props for component ${t}`,this.getAttribute(`props`),e),e}await this.hydrator(this)(this.Component,o,r,{client:this.getAttribute(`client`)}),this.removeAttribute(`ssr`),this.dispatchEvent(new CustomEvent(`astro:hydrate`))}),r(this,`unmount`,()=>{this.isConnected||this.dispatchEvent(new CustomEvent(`astro:unmount`))})}disconnectedCallback(){document.removeEventListener(`astro:after-swap`,this.unmount),document.addEventListener(`astro:after-swap`,this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute(`await-children`)||document.readyState===`interactive`||document.readyState===`complete`)this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener(`DOMContentLoaded`,e),t.disconnect(),this.childrenConnectedCallback()},t=new MutationObserver(()=>{var t;((t=this.lastChild)==null?void 0:t.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue===`astro:end`&&(this.lastChild.remove(),e())});t.observe(this,{childList:!0}),document.addEventListener(`DOMContentLoaded`,e)}}async childrenConnectedCallback(){let e=this.getAttribute(`before-hydration-url`);e&&await import(e),this.start()}getRetryImportUrl(e){let t=new URL(e,document.baseURI);return t.searchParams.set(`astro-retry`,Date.now().toString()),t.toString()}async importWithRetry(e){try{return await import(e)}catch(t){return await new Promise(e=>setTimeout(e,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let t=this.getAttribute(`component-url`),n=new CustomEvent(`astro:hydration-error`,{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:t}});this.dispatchEvent(n)&&console.error(`[astro-island] Error hydrating ${t}`,e)}async start(){let e=JSON.parse(this.getAttribute(`opts`)),t=this.getAttribute(`client`);if(Astro[t]===void 0)window.addEventListener(`astro:${t}`,()=>this.start(),{once:!0});else try{await Astro[t](async()=>{let e=this.getAttribute(`renderer-url`);try{let[t,{default:n}]=await Promise.all([this.importWithRetry(this.getAttribute(`component-url`)),e?this.importWithRetry(e):Promise.resolve({default:()=>()=>{}})]),r=this.getAttribute(`component-export`)||`default`;if(r.includes(`.`)){this.Component=t;for(let e of r.split(`.`)){if(i.has(e)||!this.Component||typeof this.Component!=`object`&&typeof this.Component!=`function`||!Object.hasOwn(this.Component,e))throw Error(`Invalid component export path: ${r}`);this.Component=this.Component[e]}}else{if(i.has(r))throw Error(`Invalid component export path: ${r}`);this.Component=t[r]}return this.hydrator=n,this.hydrate}catch(e){return this.handleHydrationError(e),()=>{}}},e,this)}catch(e){this.handleHydrationError(e)}}attributeChangedCallback(){this.hydrate()}}r(o,`observedAttributes`,[`props`]),customElements.get(`astro-island`)||customElements.define(`astro-island`,o)}})();</script><astro-island uid="fbD0H" prefix="r11" component-url="./assets/World.Bn9IBtuc.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;story&quot;:[0,&quot;A&quot;],&quot;page&quot;:[0,&quot;case&quot;],&quot;piece&quot;:[0,&quot;ledger&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;World&quot;,&quot;value&quot;:true}" await-children><canvas class="world-canvas" aria-hidden="true"></canvas><!--astro:end--></astro-island><header class="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8 md:pt-5"><nav aria-label="Main" class="glass header-glass mx-auto max-w-6xl rounded-[26px] md:rounded-full"><div class="flex items-center justify-between gap-4 py-2 pl-5 pr-2"><a href="index.html" class="flex items-baseline gap-2 whitespace-nowrap text-chalk no-underline" aria-label="Minh Nguyen, home"><span class="display text-[1.6rem] leading-none">Minh Nguyen</span><span class="hidden font-mono text-xs uppercase tracking-[0.12em] text-fog lg:inline">Lead Product Designer</span></a><div class="flex items-center gap-1"><ul class="hidden items-center gap-1 md:flex"><li><a href="index.html#work" aria-current="page" class="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:text-chalk text-chalk bg-white/[0.07]">Work</a></li><li><a href="leadership.html" class="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:text-chalk text-fog">Leadership</a></li><li><a href="about.html" class="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:text-chalk text-fog">About</a></li><li><a href="resume.html" class="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:text-chalk text-fog">Résumé</a></li></ul><astro-island uid="Z14yjh3" prefix="r12" component-url="./assets/MotionToggle.-ltn2xd7.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;MotionToggle&quot;,&quot;value&quot;:true}" await-children><button type="button" aria-pressed="false" aria-label="Pause motion" title="Pause motion" class="grid h-9 w-9 place-items-center rounded-full text-fog transition-colors hover:text-chalk"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><g fill="currentColor"><rect x="4" y="3.5" width="2.6" height="9" rx="1"></rect><rect x="9.4" y="3.5" width="2.6" height="9" rx="1"></rect></g></svg></button><!--astro:end--></astro-island><astro-island uid="Z1srwuE" prefix="r20" component-url="./assets/SoundToggle.DpTjMWbg.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;SoundToggle&quot;,&quot;value&quot;:true}" await-children><button type="button" aria-pressed="false" aria-label="Sound" title="Sound off" class="group grid h-9 w-9 place-items-center rounded-full text-fog transition-colors hover:text-chalk"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect x="1" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect><rect x="5" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect><rect x="9" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect><rect x="13" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect><rect x="17" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect></svg></button><!--astro:end--></astro-island><a href="mailto:xpland.nguyen@gmail.com" class="whitespace-nowrap rounded-full bg-paper px-4 py-2 text-sm font-medium text-ink no-underline transition-transform hover:scale-[1.03]">Get in touch</a></div></div><ul class="flex justify-center gap-1 border-t border-white/10 px-2 py-1.5 md:hidden" aria-label="Sections"><li><a href="index.html#work" aria-current="page" class="block rounded-full px-3 py-1.5 text-[0.8125rem] no-underline bg-white/[0.08] text-chalk">Work</a></li><li><a href="leadership.html" class="block rounded-full px-3 py-1.5 text-[0.8125rem] no-underline text-fog">Leadership</a></li><li><a href="about.html" class="block rounded-full px-3 py-1.5 text-[0.8125rem] no-underline text-fog">About</a></li><li><a href="resume.html" class="block rounded-full px-3 py-1.5 text-[0.8125rem] no-underline text-fog">Résumé</a></li></ul></nav></header><main id="main" tabindex="-1"><article><astro-island uid="Z1Asots" prefix="r18" component-url="./assets/CaseHero.kr9WyhZ0.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;story&quot;:[0,{&quot;hero1&quot;:[0,&quot;Calm products for money, data and trust.&quot;],&quot;hero2&quot;:[0,&quot;Every claim comes with its receipt.&quot;],&quot;mapLine&quot;:[0,&quot;Designed from Ho Chi Minh City. Shipped for teams in Melbourne and London.&quot;],&quot;workTitle&quot;:[0,&quot;Eight cases. Each one proves something different.&quot;],&quot;habitsTitle&quot;:[0,&quot;I raise the bar by making it easier to meet.&quot;],&quot;close1&quot;:[0,&quot;Hiring a lead for something people have to trust?&quot;],&quot;close2&quot;:[0,&quot;Every claim comes with its receipt.&quot;],&quot;foldLabel&quot;:[0,&quot;Read the full case&quot;],&quot;nextLabel&quot;:[0,&quot;Next&quot;],&quot;id&quot;:[0,&quot;A&quot;],&quot;name&quot;:[0,&quot;The observation deck&quot;],&quot;shape&quot;:[0,&quot;pane&quot;],&quot;backdrop&quot;:[0,&quot;deck&quot;],&quot;heroEyebrow&quot;:[0,&quot;Minh Nguyen · Lead Product Designer&quot;],&quot;heroSub&quot;:[0,&quot;I lead design where a wrong number costs real money: a consumer stablecoin wallet built from the first screen for phone and desktop, credit workflows and merchant onboarding at NAB, and an AI-assisted regulatory tool.&quot;],&quot;reveal&quot;:[0,&quot;From up here the hand-offs show. The same details, copied from a spreadsheet into an email, then typed again. I design the system so they are typed once.&quot;],&quot;split&quot;:[1,[[0,&quot;Seen from&quot;],[0,&quot;above.&quot;]]],&quot;objectCaption&quot;:[0,&quot;Three tools and one email thread, mapped before a single screen. What the platform can check now runs in the background. When a request fails, the screen says why.&quot;],&quot;caseHeroHint&quot;:[0,&quot;Behind glass&quot;],&quot;frameLabel&quot;:[0,&quot;OBSERVATION DECK&quot;]}],&quot;visual&quot;:[0,{&quot;kind&quot;:[0,&quot;img&quot;],&quot;src&quot;:[0,&quot;img/admin-01-overview-attention-queue-desktop.webp&quot;],&quot;alt&quot;:[0,&quot;Admin overview showing a queue of items that need an operator now&quot;],&quot;caption&quot;:[0,&quot;The overview is a queue of what needs an operator now. Placeholder data.&quot;]}],&quot;eyebrow&quot;:[0,&quot;Unera · 2026 – now · 7 min read&quot;],&quot;title&quot;:[0,&quot;An operations console where every screen ships with its bad days, and the team got to cut what AI added.&quot;],&quot;proves&quot;:[0,&quot;Leading a small team: standards, reviews, and hand-off engineers can build from.&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;CaseHero&quot;,&quot;value&quot;:true}" await-children><section data-stage="" data-t0="0" data-t1="1" data-pin="1" class="relative bg-night" style="height:280vh"><div class="sticky top-0 h-[100dvh] overflow-hidden"><div class="absolute inset-0 overflow-hidden"><div class="absolute inset-0 will-change-transform" style="transform:scale(1.16)"><div class="absolute inset-0"><div class="absolute inset-0 overflow-hidden " aria-hidden="true"><canvas class="absolute inset-0 h-full w-full"></canvas><div class="grain absolute inset-0"></div></div><div class="absolute inset-0 flex items-center justify-center px-5 pb-10 pt-24 md:px-8"><div class="frame frame-pane  w-[min(960px,92vw,calc((100dvh_-_12rem)*1.6))]"><div class="frame-glass"><img src="img/admin-01-overview-attention-queue-desktop.webp" alt="Admin overview showing a queue of items that need an operator now" width="1200" height="750" loading="eager" decoding="async" class="block h-auto w-full"/></div><span class="frame-reflection" aria-hidden="true"></span><span class="frame-label" aria-hidden="true">OBSERVATION DECK</span></div></div></div></div><div aria-hidden="true" class="aperture-hole pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 will-change-[width,height]" style="border-radius:1.5vmin;box-shadow:0 0 0 300vmax hsl(201 100% 6%);width:34vmin;height:49.3vmin"><div class="aperture-edge absolute inset-0" style="border-radius:1.5vmin;opacity:1"></div></div><div class="absolute inset-0 overflow-y-auto" style="opacity:1;transform:none"><div class="case-copy mx-auto flex min-h-full max-w-6xl flex-col justify-end px-5 pb-20 pt-28 md:justify-center md:px-8"><p class="self-start rounded-lg bg-night/90 px-3 py-1 font-mono text-xs uppercase tracking-[0.16em] text-mist">Unera · 2026 – now · 7 min read</p><h1 class="display on-scene mt-4 max-w-[18ch] text-[2.4rem] leading-[0.98] sm:text-6xl md:mt-6 lg:text-[5rem]">An operations console where every screen ships with its bad days, and the team got to cut what AI added.</h1><p class="case-why on-scene mt-5 max-w-[44rem] text-base text-chalk md:mt-8 md:max-w-[30rem] md:text-lg"><span class="font-medium text-chalk">Why this case is here:</span> <!-- -->Leading a small team: standards, reviews, and hand-off engineers can build from.</p></div></div></div></div></section><!--astro:end--></astro-island><section class="mx-auto max-w-6xl px-5 py-24 md:px-8" aria-label="Case facts"><div class="grid gap-12 lg:grid-cols-[1fr_340px] lg:gap-16"><div><a href="index.html#work" class="inline-flex min-h-6 items-center font-mono text-xs uppercase tracking-[0.12em] text-fog no-underline hover:text-chalk">← All work</a><p class="display mt-8 max-w-[22ch] text-3xl leading-[1.1] md:text-5xl">In build, spec v16.</p><p class="mt-6 max-w-[48ch] text-mist">Six scenes follow, then the full written case. Every number carries a stamp that says how I know it.</p></div><div class="paper self-start px-5 pt-5" role="group" aria-label="Case facts receipt"><div class="text-center text-xs tracking-[0.18em]">CASE FACTS</div><hr><dl class="space-y-2.5"><div><dt class="meta text-xs tracking-[0.1em]">ROLE</dt><dd>Lead Product Designer (contract), leading a part-time junior designer</dd></div><div><dt class="meta text-xs tracking-[0.1em]">TEAM</dt><dd>Product owner, QA and spec owner, 2 back-end and 2 front-end engineers, 1 junior designer</dd></div><div><dt class="meta text-xs tracking-[0.1em]">STATUS</dt><dd>In build, spec v16</dd></div></dl><hr><ul class="space-y-3"><li><div class="row"><span>Features cut before anyone built them</span></div><div class="mt-1 flex flex-wrap items-center gap-2"><span class="tabular text-base font-semibold">4</span><span class="stamp" data-k="record" title="A count of real artefacts. 13 Oct review, after AI disclosure">Record</span></div><div class="meta text-xs">13 Oct review, after AI disclosure</div></li><li><div class="row"><span>Gaps between design and API, each with a proposal</span></div><div class="mt-1 flex flex-wrap items-center gap-2"><span class="tabular text-base font-semibold">9</span><span class="stamp" data-k="record" title="A count of real artefacts. Spec map inside the prototype">Record</span></div><div class="meta text-xs">Spec map inside the prototype</div></li><li><div class="row"><span>Rate change: clone vs blank rule</span></div><div class="mt-1 flex flex-wrap items-center gap-2"><span class="tabular text-base font-semibold">~33 s vs ~73 s</span><span class="stamp" data-k="modelled" title="Calculated from stated assumptions. Keystroke-level model; hands-on time only">Modelled</span></div><div class="meta text-xs">Keystroke-level model; hands-on time only</div></li></ul></div></div></section><script>(function(){let e=(e,t,n)=>{let r=async()=>{await(await e())()},i=typeof t.value==`object`?t.value:void 0,a={rootMargin:i==null?void 0:i.rootMargin},o=new IntersectionObserver(e=>{for(let t of e)if(t.isIntersecting){o.disconnect(),r();break}},a);for(let e of n.children)o.observe(e)};(self.Astro||(self.Astro={})).visible=e,window.dispatchEvent(new Event(`astro:visible`))})();</script><astro-island uid="Z245pYn" prefix="r13" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The problem</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">A tool that can fix things can also hide them.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">An operator who can edit a balance can also make a mistake vanish. The client set hard limits: no refunds from the console, no balance edits, every adjustment append-only.</p></div><div class="scene-in scene-in-2 min-w-0"><div class="compare grid gap-8 sm:grid-cols-2"><div><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The usual console</p><ul class="mt-4 space-y-4"><li class="compare-before text-lg leading-snug text-fog">A wall of charts</li><li class="compare-before text-lg leading-snug text-fog">A confirm dialog</li><li class="compare-before text-lg leading-snug text-fog">An on/off switch for rules</li></ul></div><div><p class="font-mono text-xs uppercase tracking-[0.16em] text-champagne">This one</p><ul class="mt-4 space-y-4"><li class="compare-after text-lg leading-snug text-chalk">A queue of what needs an operator now</li><li class="compare-after text-lg leading-snug text-chalk">A reason saved with every privileged action</li><li class="compare-after text-lg leading-snug text-chalk">Rule versions you can create, clone or cancel, never rewrite</li></ul></div></div></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="ZaKnQi" prefix="r24" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in lg:order-2"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The design</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">Operators start the day asking “what needs me”, so the overview is a queue.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">Failed or stuck transactions, pending reviews and centres with problems, each with one next action. Analytics live elsewhere.</p></div><div class="scene-in scene-in-2 min-w-0 lg:order-1"><figure class="m-0"><div class="frame frame-pane  "><div class="frame-glass"><img src="img/admin-01-overview-attention-queue-desktop.webp" alt="Admin overview as a work queue" width="1200" height="750" loading="lazy" decoding="async" class="block h-auto w-full"></div><span class="frame-reflection" aria-hidden="true"></span><span class="frame-label" aria-hidden="true">OBSERVATION DECK</span></div><figcaption class="mt-4 font-mono text-[0.75rem] leading-relaxed text-fog">Placeholder data.</figcaption></figure></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="Z1HGPFU" prefix="r25" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The standard</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">Every module ships with its bad days.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">No module reaches engineering without its happy, error and edge states, plus offline and session expiry. Status names match the user’s own history, so support and customers use the same words.</p></div><div class="scene-in scene-in-2 min-w-0"><figure class="m-0"><div class="frame frame-pane  "><div class="frame-glass"><div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/admin-states.webp" width="1200" height="750" aria-label="Transactions table cycling through ready, loading, failed to load, offline and a two-minute session warning"><source src="anim/admin-states.mp4" type="video/mp4"></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div></div><span class="frame-reflection" aria-hidden="true"></span><span class="frame-label" aria-hidden="true">OBSERVATION DECK</span></div><figcaption class="mt-4 font-mono text-[0.75rem] leading-relaxed text-fog">One table, five of its days. Recorded from the prototype.</figcaption></figure></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="GKd5f" prefix="r19" component-url="./assets/WorldBeats.gWLJPq9y.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;eyebrow&quot;:[0,&quot;The console, as a place&quot;],&quot;beats&quot;:[1,[[0,{&quot;title&quot;:[0,&quot;Thousands of transactions. The few that need a person rise.&quot;],&quot;body&quot;:[0,&quot;The overview is a queue: failed, stuck and waiting-for-approval items, each with one next action.&quot;]}],[0,{&quot;title&quot;:[0,&quot;Every fix is written down with its reason.&quot;],&quot;body&quot;:[0,&quot;A retry, a pause or a rule change can’t be saved without a reason code. Each one adds an entry to the log.&quot;]}],[0,{&quot;title&quot;:[0,&quot;Nothing is edited. A change is a new entry.&quot;],&quot;body&quot;:[0,&quot;Cancelling a scheduled rule adds an entry on top. The old one stays, so anyone can see what applied last Tuesday. The cubes are an illustration, not data.&quot;]}]]],&quot;fallback&quot;:[0,{&quot;src&quot;:[0,&quot;img/unera/ledger-still.webp&quot;],&quot;alt&quot;:[0,&quot;Night view of a field of transaction cubes, a few amber ones lifted into a queue, beside a tower of logged entries&quot;]}]}" ssr client="load" opts="{&quot;name&quot;:&quot;WorldBeats&quot;,&quot;value&quot;:true}" await-children><section data-stage="" data-t0="2" data-t1="3" data-pin="1" class="relative world-beats" style="height:390vh"><div class="sticky top-0 h-[100dvh] overflow-hidden"><div class="relative h-full"><div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-night/90 via-night/30 to-transparent lg:bg-gradient-to-r lg:from-night/85 lg:via-night/35 lg:to-transparent"></div><div class="absolute inset-0 flex items-start justify-center px-5 pt-28 lg:items-center lg:justify-end lg:px-12 lg:pt-0"><img src="img/unera/ledger-still.webp" alt="Night view of a field of transaction cubes, a few amber ones lifted into a queue, beside a tower of logged entries" loading="lazy" decoding="async" class="block h-auto w-[min(640px,90vw)] rounded-[18px] bg-paper p-2"/></div><div class="relative mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-16 md:px-8 lg:justify-center lg:pb-0"><div class="lg:max-w-[30rem]"><p class="w-fit rounded-lg bg-night/90 px-3 py-1 font-mono text-xs uppercase tracking-[0.16em] text-mist">The console, as a place</p><div class="relative mt-6 h-[15rem] sm:h-[16rem] lg:h-[20rem]"><div class="absolute inset-x-0 bottom-0 lg:bottom-auto" style="opacity:1;transform:none"><h3 class="display on-scene text-[2.1rem] leading-[1.02] text-chalk sm:text-5xl lg:text-[3.3rem]">Thousands of transactions. The few that need a person rise.</h3><p class="on-scene mt-5 max-w-[34rem] text-base leading-relaxed text-mist md:text-lg">The overview is a queue: failed, stuck and waiting-for-approval items, each with one next action.</p></div><div class="absolute inset-x-0 bottom-0 lg:bottom-auto" style="opacity:0;transform:translateY(18px)"><h3 class="display on-scene text-[2.1rem] leading-[1.02] text-chalk sm:text-5xl lg:text-[3.3rem]">Every fix is written down with its reason.</h3><p class="on-scene mt-5 max-w-[34rem] text-base leading-relaxed text-mist md:text-lg">A retry, a pause or a rule change can’t be saved without a reason code. Each one adds an entry to the log.</p></div><div class="absolute inset-x-0 bottom-0 lg:bottom-auto" style="opacity:0;transform:translateY(18px)"><h3 class="display on-scene text-[2.1rem] leading-[1.02] text-chalk sm:text-5xl lg:text-[3.3rem]">Nothing is edited. A change is a new entry.</h3><p class="on-scene mt-5 max-w-[34rem] text-base leading-relaxed text-mist md:text-lg">Cancelling a scheduled rule adds an entry on top. The old one stays, so anyone can see what applied last Tuesday. The cubes are an illustration, not data.</p></div></div><div class="mt-8 flex max-w-[16rem] gap-2" aria-hidden="true"><span class="relative h-[2px] flex-1 overflow-hidden rounded-full bg-white/15"><span class="absolute inset-y-0 left-0 bg-champagne" style="width:0%"></span></span><span class="relative h-[2px] flex-1 overflow-hidden rounded-full bg-white/15"><span class="absolute inset-y-0 left-0 bg-champagne" style="width:0%"></span></span><span class="relative h-[2px] flex-1 overflow-hidden rounded-full bg-white/15"><span class="absolute inset-y-0 left-0 bg-champagne" style="width:0%"></span></span></div></div></div><ol class="sr-only"><li>Thousands of transactions. The few that need a person rise.<!-- --> The overview is a queue: failed, stuck and waiting-for-approval items, each with one next action.</li><li>Every fix is written down with its reason.<!-- --> A retry, a pause or a rule change can’t be saved without a reason code. Each one adds an entry to the log.</li><li>Nothing is edited. A change is a new entry.<!-- --> Cancelling a scheduled rule adds an entry on top. The old one stays, so anyone can see what applied last Tuesday. The cubes are an illustration, not data.</li></ol></div></div></section><!--astro:end--></astro-island><astro-island uid="Z1TEl2j" prefix="r16" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The review</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">I said where AI had drafted the design. The team cut four features before anyone built them.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">Tag editing, statuses that didn’t exist in the back end, an amount filter and global search. Saying it plainly made it easy for engineers to push back.</p></div><div class="scene-in scene-in-2 min-w-0"><dl class="grid gap-x-10 gap-y-10 sm:grid-cols-1"><div class="stat border-t border-rule pt-5"><dd class="tabular display text-[2.6rem] leading-none text-chalk md:text-6xl">28</dd><dt class="mt-3 text-mist">items in the 13 October review</dt><dd class="mt-3 flex flex-wrap items-center gap-2 text-sm text-fog"><span class="stamp" data-k="record" title="A count of real artefacts. Each with an owner and an outcome">Record</span><span class="font-mono text-[0.75rem]">Each with an owner and an outcome</span></dd></div><div class="stat border-t border-rule pt-5"><dd class="tabular display text-[2.6rem] leading-none text-chalk md:text-6xl">4</dd><dt class="mt-3 text-mist">features removed before build</dt><dd class="mt-3 flex flex-wrap items-center gap-2 text-sm text-fog"><span class="stamp" data-k="record" title="A count of real artefacts. After AI disclosure">Record</span><span class="font-mono text-[0.75rem]">After AI disclosure</span></dd></div><div class="stat border-t border-rule pt-5"><dd class="tabular display text-[2.6rem] leading-none text-chalk md:text-6xl">7 · 10 · ~65</dd><dt class="mt-3 text-mist">modules, components, tokens</dt><dd class="mt-3 flex flex-wrap items-center gap-2 text-sm text-fog"><span class="stamp" data-k="record" title="A count of real artefacts. Spec v16">Record</span><span class="font-mono text-[0.75rem]">Spec v16</span></dd></div></dl></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="YCE0E" prefix="r17" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1fr]"><div class="scene-in lg:order-2"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">Leading the work</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">The standard came before the screens.</h2></div><div class="scene-in scene-in-2 min-w-0 lg:order-1"><ul class="led space-y-7"><li class="led-item text-lg leading-relaxed text-mist">The states rule and the reason-on-every-action rule were in the design readme before the first module was built.</li><li class="led-item text-lg leading-relaxed text-mist">Ran an open review: the product lead chaired, I presented, the team edited the design in the room.</li><li class="led-item text-lg leading-relaxed text-mist">Split the work by lane: a part-time junior designer owns error and edge states against rules I wrote, not against my preferences.</li><li class="led-item text-lg leading-relaxed text-mist">Mapped 15 spec requirements and 11 review items to screens, and raised 9 gaps with the back-end, each with a proposal.</li></ul></div></div></astro-slot></section><!--astro:end--></astro-island><div class="mx-auto mt-12 max-w-6xl px-5 md:px-8"><details class="case-fold mt-16 border-t border-rule"><summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-8"><span class="display text-3xl md:text-5xl">Read the full case</span><span class="fold-icon glass grid h-11 w-11 shrink-0 place-items-center rounded-full" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12" class="fold-plus"></path></svg></span></summary><div class="prose-case pb-8"><div class="prose-case"><p><strong>In one line:</strong> Operators needed one console to fix stuck transactions, manage community centres and run the points rules, without ever being able to quietly change someone&#39;s balance. I designed it with the team in the room, told them openly which parts AI had drafted, and let them cut what they didn&#39;t need.</p>
+<div class="table-wrap"><table>
+
+<tbody><tr>
+<td><strong>Role</strong></td>
+<td>Lead Product Designer (contract). I set the design standards and lead a part-time junior designer who works on error and edge states.</td>
+</tr>
+<tr>
+<td><strong>Team</strong></td>
+<td>Product lead, product owner, QA and spec owner, 2 back-end and 2 front-end engineers</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>Desktop-first web console that still works on a phone</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Designed to spec v16. First release scoped to the Huma operators. In build.</td>
+</tr>
+</tbody></table></div>
+<h2>Thirty-second version</h2>
+<ul>
+<li><strong>Problem.</strong> Support and operations staff needed to find failed transactions, manage centres and run reward rules. In a money product, the same tool that fixes a problem can also hide one.</li>
+<li><strong>What I did.</strong> Made the overview a work queue, not a dashboard. Put a reason field on every privileged action. Made reward rules append-only, so history can&#39;t be rewritten. Set one rule for every module: happy, error and edge states, plus offline and session expiry, designed before hand-off.</li>
+<li><strong>How it went.</strong> In the review on 13 October, the team went through 28 points. I&#39;d told them up front that AI had drafted parts of the design and asked them to cut anything they didn&#39;t need. They removed four features, and we narrowed the first release to what the end-of-October launch needed. Before launch I modelled the two main operator tasks and wrote a five-person test to replace the model.</li>
+</ul>
+<h3>How the work ran</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What happened</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Discover</td>
+<td>25 September 2026: direction from the QA and spec owner, &quot;structure first, keep it simple&quot;. Read the spec (v13 on 8 October, v16 on 12 October) and the client&#39;s hard limits: no refunds, no balance edits, adjustments append-only.</td>
+</tr>
+<tr>
+<td>Reframe</td>
+<td>From &quot;an admin dashboard&quot; to &quot;a queue of what needs an operator now, with a reason recorded for everything they do&quot;.</td>
+</tr>
+<tr>
+<td>Quality bar</td>
+<td>States rule written into the design readme: no module reaches engineering without happy, error, edge, offline and session-expiry states. Status names identical to the user&#39;s own history.</td>
+</tr>
+<tr>
+<td>Design</td>
+<td>Audit 4 October; builds 11, 13 and 16 October. Seven modules, 10 components, about 65 tokens, 11 guideline cards.</td>
+</tr>
+<tr>
+<td>Validate</td>
+<td>13 October review with the product lead, product owner, QA, back-end and front-end: 28 items, four features removed, release scope narrowed.</td>
+</tr>
+<tr>
+<td>Ship or measure</td>
+<td>First release scoped to Huma operators, targeted for end of October 2026. Not launched yet. Configuration tab proposed next.</td>
+</tr>
+</tbody></table></div>
+<figure>
+  <img src="img/admin-01-overview-attention-queue-desktop.webp" alt="Admin overview showing a queue of items that need an operator now" width="1200" height="750" loading="lazy" />
+  <figcaption>The overview is a queue of what needs an operator now. Analytics live elsewhere. Placeholder data.</figcaption>
+</figure>
+
+<figure>
+  <img src="img/admin-05-overview-mobile.webp" alt="The admin overview at phone width: a warning that some data may lag, counts of failed and pending items, and the needs-attention queue" width="390" height="1300" loading="lazy" style="max-width:320px" />
+  <figcaption>The same overview at phone width. Placeholder data.</figcaption>
+</figure>
+
+<h2>A tool that can fix things can also hide them.</h2>
+<p>In a consumer money product, the admin console is where trust is won or lost out of sight. An operator who can edit a balance can also make a mistake vanish. Regulators, auditors and the client&#39;s own board all care about this, even if users never see the screen.</p>
+<p>The client set hard limits: no refunds from the console, no balance edits, and any adjustment recorded as a new entry. My job was to make those limits feel like the natural way to work, not like obstacles.</p>
+<h2>Operators start the day asking &quot;what needs me&quot;, so the overview is a queue.</h2>
+<p>Admin homepages tend to become chart walls. Operators don&#39;t start their day asking &quot;how are we doing?&quot;. They ask &quot;what needs me?&quot;. The overview lists exactly that: failed or stuck transactions, pending reviews and centres with problems, each with one next action.</p>
+<h2>Every privileged action records a reason, because a confirm dialog proves nothing later.</h2>
+<p>Pausing a centre, changing a rule or retrying a payment asks for a reason code and a note. The reason is saved with the action. Six months later, an auditor can see who did what and why, without asking anyone.</p>
+<h2>Reward rules are append-only, because a switch rewrites history.</h2>
+<p>Reward rules started with an on/off switch. The trouble with a switch is that you can&#39;t tell what rule applied last Tuesday. I replaced it with versions you can create, clone or cancel before they start. Validation catches missing fields, start dates in the past and duplicates, and warns about overlaps.</p>
+<figure>
+  <img src="img/admin-02-earning-rule-validation-desktop.webp" alt="Earning rule form with validation errors for a past start date and an overlapping rule" width="1200" height="750" loading="lazy" />
+  <figcaption>Rule validation: past dates and duplicates are blocked, and overlaps get a warning.</figcaption>
+</figure>
+
+<h2>Every module ships with its bad days.</h2>
+<p>My rule for this console, written into its design readme: no module goes to engineering without its happy, error and edge states, plus offline and session expiry. Tables page after ten rows and use the same status names the user sees in their own history, so support and customers describe a transaction the same way.</p>
+<figure>
+  <div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/admin-states.webp" width="1200" height="750" aria-label="Transactions table cycling through its states: ready, loading, could not load, offline with actions paused, and a two-minute session warning"><source src="anim/admin-states.mp4" type="video/mp4" /></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div>
+  <figcaption>One table, five of its days: ready, loading, failed to load, offline, session ending. Recorded from the prototype with placeholder data.</figcaption>
+</figure>
+
+<h2>I said where AI was used, and the team cut four features before anyone built them.</h2>
+<p>I design in code with AI help, and it&#39;s fast. It&#39;s also generous: it adds things nobody asked for. Before the 13 October review, I told the team which parts AI had drafted and asked them to call out anything redundant.</p>
+<p>They did. We removed tag editing, statuses that didn&#39;t exist in the back end, an amount filter and global search. Each was a feature someone would have had to build, test and maintain for no user need. Saying it plainly made it easy for engineers to push back. Hiding it would have made every extra look like my judgement.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>From the 13 Oct review</th>
+<th>What changed</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Features nobody asked for</td>
+<td>Tag editing, invented statuses, amount filter, global search removed</td>
+</tr>
+<tr>
+<td>Swap amounts</td>
+<td>Show both sides: &quot;1,200 hUSD → 1,200 USDC&quot;</td>
+</tr>
+<tr>
+<td>Token list</td>
+<td>Split into OTC and Swap</td>
+</tr>
+<tr>
+<td>Community centres</td>
+<td>Pause added</td>
+</tr>
+<tr>
+<td>Release scope</td>
+<td>Needs-action, Reserve and stablecoin roles hidden for the first launch</td>
+</tr>
+</tbody></table></div>
+<h2>I own the flows and the rules. The junior designer owns the bad days inside them.</h2>
+<p>As the three products grew, the edge cases outgrew one person. A part-time junior designer joined to work on error and edge states. I split the work into two lanes so it could run in parallel without two designers inventing two styles.</p>
+<figure class="lanes">
+  <div class="lane">
+    <p class="lane-h"><span>My lane</span> The modules, the rules, the system</p>
+    <ul>
+      <li><img src="img/split/admin-queue.webp" alt="Overview as a queue: failed and stuck items, each with one next action" width="640" height="480" loading="lazy" /><span>Overview as a queue of what needs an operator</span></li>
+      <li><img src="img/split/admin-rule.webp" alt="Rule form: apply-from date required and in the future, reason code required" width="640" height="480" loading="lazy" /><span>Rule form: a future start date and a reason, or no save</span></li>
+      <li><img src="img/split/admin-table.webp" alt="Transactions table with status filters and pagination" width="640" height="480" loading="lazy" /><span>Tables: the user's own status names, 10 rows a page</span></li>
+    </ul>
+  </div>
+  <p class="lane-hand">I hand over the module, the spec's list of failure cases and the written states rule. Every state comes back to me for review before engineering sees it.</p>
+  <div class="lane lane-b">
+    <p class="lane-h"><span>Junior designer's lane</span> The bad days, inside those rules</p>
+    <ul>
+      <li><img src="img/split/admin-error.webp" alt="List failed to load: the server did not respond, filters are kept, nothing was changed, with a reference and Try again" width="640" height="480" loading="lazy" /><span>Failed to load: "nothing was changed"</span></li>
+      <li><img src="img/split/admin-offline.webp" alt="Offline banner over the audit log: showing data from the last sync, actions paused, inputs kept" width="640" height="480" loading="lazy" /><span>Offline: actions paused, nothing half-applied</span></li>
+      <li><img src="img/split/admin-session.webp" alt="Session warning: your session ends in two minutes, sign out or stay signed in" width="640" height="480" loading="lazy" /><span>Session ending: two minutes' warning</span></li>
+    </ul>
+  </div>
+  <figcaption>Real prototype screens, anonymised. Placeholder data.</figcaption>
+</figure>
+
+<p>The states rule is in the console&#39;s design readme, dated 4 October, before the first module was built:</p>
+<ul>
+<li>Every error says what happened in plain words, that nothing was changed, what to do next, and gives a reference.</li>
+<li>Dialogs stay open on failure, with what the operator typed still in them.</li>
+<li>Offline keeps showing the last data and disables confirm buttons, saying why. Session expiry warns before it signs anyone out.</li>
+</ul>
+<p>Because the rule is written down, our reviews are about the operator&#39;s situation, not about style.</p>
+<h2>Before launch: a bar, a model, and the test that replaces the model.</h2>
+<p>The client tracks operator task completion time as a measure of system health. Nothing is live yet, so I modelled the two tasks operators will do most and wrote the test that will replace the model.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Bar</th>
+<th>Receipt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Retry a stuck transaction with a reason code and a short note</td>
+<td>About 18.3 s from the queue, 26.3 s from the table</td>
+<td><span class="stamp" data-k="modelled">Modelled</span></td>
+</tr>
+<tr>
+<td>Schedule a rate change</td>
+<td>About 32.6 s by cloning the active rule, 72.5 s from a blank rule</td>
+<td><span class="stamp" data-k="modelled">Modelled</span></td>
+</tr>
+<tr>
+<td>Operators who retry the right transaction, with a reason an auditor can follow</td>
+<td>5 of 5</td>
+<td><span class="stamp" data-k="target">Target</span></td>
+</tr>
+<tr>
+<td>Operators who find who paused a centre last week, and why, from the audit log</td>
+<td>4 of 5</td>
+<td><span class="stamp" data-k="target">Target</span></td>
+</tr>
+<tr>
+<td>Operators who finish safely when the connection drops mid-task</td>
+<td>5 of 5</td>
+<td><span class="stamp" data-k="target">Target</span></td>
+</tr>
+</tbody></table></div>
+<p><strong>Read these carefully.</strong> The model is a keystroke-level model with standard times: 1.1 s to point, 0.2 s to click, 0.28 s per keystroke, 0.4 s to move a hand between mouse and keyboard, and 1.35 s to decide before each step. It leaves out reading and network waits. The queue&#39;s real advantage is noticing the problem at all, which no model counts. The targets are mine and still need the product lead&#39;s agreement.</p>
+<details>
+<summary>The five-person test script</summary>
+
+<div class="table-wrap"><table>
+
+<tbody><tr>
+<td><strong>Who</strong></td>
+<td>Five operations or support staff who will use the console</td>
+</tr>
+<tr>
+<td><strong>Setup</strong></td>
+<td>Moderated, 45 minutes, prototype with demo data. Think aloud.</td>
+</tr>
+<tr>
+<td><strong>Task 1</strong></td>
+<td>Deal with the first item the overview shows. <em>Measure:</em> right item, right action, reason an auditor would understand.</td>
+</tr>
+<tr>
+<td><strong>Task 2</strong></td>
+<td>Schedule next month&#39;s donation rate change. <em>Measure:</em> time on task, start date and reason correct.</td>
+</tr>
+<tr>
+<td><strong>Task 3</strong></td>
+<td>A user says their donation never arrived. Find it and tell them what happened, in their words. <em>Measure:</em> status name matches the user&#39;s history.</td>
+</tr>
+<tr>
+<td><strong>Task 4</strong></td>
+<td>Find who paused a centre last week, and why. <em>Measure:</em> found unaided in the audit log.</td>
+</tr>
+<tr>
+<td><strong>Task 5</strong></td>
+<td>Mid-task, the connection drops (we trigger it). Finish safely. <em>Measure:</em> nothing half-applied, inputs kept.</td>
+</tr>
+<tr>
+<td><strong>If a bar is missed</strong></td>
+<td>Change the design, then retest with five new people. The model is replaced by these results.</td>
+</tr>
+</tbody></table></div>
+</details>
+
+<h2>Decision log</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Options</th>
+<th>What I chose and why</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Overview</td>
+<td>Analytics dashboard / work queue</td>
+<td><strong>Work queue.</strong> Operators start with &quot;what needs me&quot;, not &quot;how are we doing&quot;.</td>
+</tr>
+<tr>
+<td>Privileged actions</td>
+<td>Confirm dialog / reason code and note</td>
+<td><strong>Reason code.</strong> A confirm dialog proves nothing later. A reason does.</td>
+</tr>
+<tr>
+<td>Reward rules</td>
+<td>On/off switch / append-only versions</td>
+<td><strong>Append-only.</strong> A switch rewrites history.</td>
+</tr>
+<tr>
+<td>AI-drafted extras</td>
+<td>Keep and justify / disclose and let the team cut</td>
+<td><strong>Disclose.</strong> Four features removed before anyone built them.</td>
+</tr>
+<tr>
+<td>First release</td>
+<td>Full design / Huma operators only</td>
+<td><strong>Huma only.</strong> It fit the end-of-October date. The rest is designed and waiting.</td>
+</tr>
+<tr>
+<td>Status names</td>
+<td>Admin-specific / same as the user&#39;s history</td>
+<td><strong>Same.</strong> Support and customers use the same words.</td>
+</tr>
+<tr>
+<td>A new rule version</td>
+<td>Blank form / clone the active rule</td>
+<td><strong>Clone.</strong> About 33 s of hands-on time against 73 s from blank, by the model, and fewer fields to mistype.</td>
+</tr>
+<tr>
+<td>Who designs the failure states</td>
+<td>Me, after the modules / a second designer, in parallel, to a written rule</td>
+<td><strong>In parallel.</strong> The states rule kept both lanes in one voice.</td>
+</tr>
+</tbody></table></div>
+<h2>How I led</h2>
+<ul>
+<li><strong>Grew a UI brief into a design practice.</strong> I was hired as a UI/UX designer for the interface and later promoted to lead. The audits, open reviews and the states rule came one at a time, each earning the next. The <a href="unera-huma.html">Huma case</a> has the dated timeline.</li>
+<li><strong>Set the standard before the screens.</strong> The states rule and the reason-on-every-action rule were written into the readme before the first module was built, so reviews had something to review against.</li>
+<li><strong>Ran an open review.</strong> The product lead chaired, I presented, and the team edited the design in the room. Twenty-eight items, each with an owner and an outcome.</li>
+<li><strong>Brought in a junior designer under a written standard.</strong> I split the work by lane, and their states are reviewed against the rule I wrote rather than against my preferences.</li>
+<li><strong>Traced the spec, in the prototype.</strong> A structure page maps 15 spec requirements and 11 review items to screens, and lists 9 gaps between the design and the back-end API, each with a proposal. One of them: the API had nowhere to store the reason code the screens already collected.</li>
+</ul>
+<h2>What I&#39;d do differently</h2>
+<p>I should have asked the team to cut AI extras at the first review, not the third. By 13 October some had already been discussed as if they were planned. My rule now: anything AI adds that isn&#39;t in the spec is marked as a proposal until the team keeps it.</p>
+<hr>
+<p><em>Prototype screens and recordings with placeholder data. Operator names and internal IDs are removed. Unera and Huma are named with the client&#39;s written approval.</em></p>
+</div></div></details></div><nav aria-label="Next case" class="mx-auto mt-32 max-w-6xl px-5 md:px-8"><a href="unera-stablecoin.html" class="group block border-t border-rule pt-10 no-underline"><span class="font-mono text-xs uppercase tracking-[0.12em] text-fog">Next · Stablecoin issuer portal</span><span class="display mt-4 block max-w-[24ch] text-4xl transition-colors group-hover:text-white md:text-6xl">A stablecoin portal that shows its proof before it asks for your money.</span></a></nav></article></main><astro-island uid="1dAqa4" prefix="r21" component-url="./assets/Chat.BzV9p4aY.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;Chat&quot;,&quot;value&quot;:true}" await-children><button type="button" class="chat-launcher" aria-expanded="false" aria-controls="chat-panel"><span class="chat-dot" aria-hidden="true"></span>Ask about Minh</button><section id="chat-panel" role="dialog" aria-modal="false" aria-labelledby="chat-title" class="chat-panel" hidden=""><div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3"><div><h2 id="chat-title" class="text-[0.9375rem] font-medium text-chalk">Ask about Minh</h2><p class="font-mono text-xs uppercase tracking-[0.1em] text-fog">Checked answers only</p></div><div class="flex items-center gap-1"><button type="button" class="chat-icon" aria-label="Start over" title="Start over"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8a5 5 0 1 0 1.6-3.7M3 2.5v2.8h2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button type="button" class="chat-icon" aria-label="Close chat" title="Close"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></button></div></div><div class="chat-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0" aria-label="Conversation"></div><form class="flex items-center gap-2 border-t border-white/10 p-3"><label for="chat-input" class="sr-only">Type a question about Minh</label><input id="chat-input" placeholder="Ask anything about Minh" autoComplete="off" maxLength="300" class="chat-input" value=""/><button type="submit" class="chat-send" aria-label="Send" disabled=""><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5L14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></form></section><!--astro:end--></astro-island><footer class="mt-32 border-t border-rule bg-night"><div class="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.2fr_1fr] md:px-8"><div><p class="display text-4xl md:text-5xl">How to read the numbers here.</p><p class="mt-4 max-w-[52ch] text-mist">Every figure on this site carries a stamp that says how I know it. If a number came from a test with five people, it says so. If it is someone’s estimate, it says whose.</p></div><dl class="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2"><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="live">Live</span></dt><dd class="text-sm text-fog">Measured in production</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="tested">Tested</span></dt><dd class="text-sm text-fog">Measured in usability testing, with sample size</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="modelled">Modelled</span></dt><dd class="text-sm text-fog">Calculated from stated assumptions</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="estimate">Estimate</span></dt><dd class="text-sm text-fog">Someone’s judgement, and I say whose</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="record">Record</span></dt><dd class="text-sm text-fog">A count of real artefacts</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="progress">In progress</span></dt><dd class="text-sm text-fog">Not shipped yet</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="target">Target</span></dt><dd class="text-sm text-fog">A goal set before launch, not a result</dd></div></dl></div><div class="mx-auto flex max-w-6xl flex-col gap-3 border-t border-rule px-5 py-8 text-sm text-fog md:flex-row md:items-center md:justify-between md:px-8"><p>The detail of my NAB work sits behind a password. Ask me for it.</p><p>No cookies, no trackers. <a href="about.html#accessibility">Accessibility</a>. © 2026 Minh Nguyen</p></div></footer></body></html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-1BvDVWLr3QCC20uHhUDi27eDFVJpk1uMQJGIWKUks2I=' 'sha256-UIrFqcaitjA3OKa9mHKajg3N+0Y7tW9+y0o3QmMFeZQ=' 'sha256-0O7iB6zr9x0r6X6eWYITC9V5q+yWCGAoFvcysBGbY9Q='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Stablecoin issuer portal · Minh Nguyen</title><meta name="description" content="Stablecoin issuer portal: A stablecoin portal that shows its proof before it asks for your money."><meta name="author" content="Minh Nguyen"><meta property="og:title" content="Stablecoin issuer portal · Minh Nguyen"><meta property="og:description" content="Stablecoin issuer portal: A stablecoin portal that shows its proof before it asks for your money."><meta property="og:type" content="website"><meta property="og:image" content="https://minhdesign.xyz/og.png"><meta name="theme-color" content="#002a42"><link rel="icon" href="favicon.svg" type="image/svg+xml"><script src="boot.js"></script><link rel="stylesheet" href="./assets/Base.BJOL_-Ho.css"></head><body class="min-h-dvh"><a class="skip" href="#main">Skip to content</a><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(function(){let e=async e=>{await(await e())()};(self.Astro||(self.Astro={})).load=e,window.dispatchEvent(new Event(`astro:load`))})();</script><script>(function(){function e(t){"@babel/helpers - typeof";return e=typeof Symbol==`function`&&typeof Symbol.iterator==`symbol`?function(e){return typeof e}:function(e){return e&&typeof Symbol==`function`&&e.constructor===Symbol&&e!==Symbol.prototype?`symbol`:typeof e},e(t)}function t(t,n){if(e(t)!=`object`||!t)return t;var r=t[Symbol.toPrimitive];if(r!==void 0){var i=r.call(t,n||`default`);if(e(i)!=`object`)return i;throw TypeError(`@@toPrimitive must return a primitive value.`)}return(n===`string`?String:Number)(t)}function n(n){var r=t(n,`string`);return e(r)==`symbol`?r:r+``}function r(e,t,r){return(t=n(t))in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}let i=/* @__PURE__ */ new Set([`__proto__`,`constructor`,`prototype`]);{let e={0:e=>a(e),1:e=>n(e),2:e=>new RegExp(e),3:e=>new Date(e),4:e=>new Map(n(e)),5:e=>new Set(n(e)),6:e=>BigInt(e),7:e=>new URL(e),8:e=>new Uint8Array(e),9:e=>new Uint16Array(e),10:e=>new Uint32Array(e),11:e=>1/0*e},t=t=>{let[n,r]=t;return n in e?e[n](r):void 0},n=e=>e.map(t),a=e=>typeof e!=`object`||!e?e:Object.fromEntries(Object.entries(e).map(([e,n])=>[e,t(n)]));class o extends HTMLElement{constructor(...e){super(...e),r(this,`Component`,void 0),r(this,`hydrator`,void 0),r(this,`hydrate`,async()=>{var e;if(!this.hydrator||!this.isConnected)return;let t=(e=this.parentElement)==null?void 0:e.closest(`astro-island[ssr]`);if(t){t.addEventListener(`astro:hydrate`,this.hydrate,{once:!0});return}let n=this.querySelectorAll(`astro-slot`),r={},i=this.querySelectorAll(`template[data-astro-template]`);for(let e of i){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`data-astro-template`)||`default`]=e.innerHTML,e.remove())}for(let e of n){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`name`)||`default`]=e.innerHTML)}let o;try{o=this.hasAttribute(`props`)?a(JSON.parse(this.getAttribute(`props`))):{}}catch(e){let t=this.getAttribute(`component-url`)||`<unknown>`,n=this.getAttribute(`component-export`);throw n&&(t+=` (export ${n})`),console.error(`[hydrate] Error parsing props for component ${t}`,this.getAttribute(`props`),e),e}await this.hydrator(this)(this.Component,o,r,{client:this.getAttribute(`client`)}),this.removeAttribute(`ssr`),this.dispatchEvent(new CustomEvent(`astro:hydrate`))}),r(this,`unmount`,()=>{this.isConnected||this.dispatchEvent(new CustomEvent(`astro:unmount`))})}disconnectedCallback(){document.removeEventListener(`astro:after-swap`,this.unmount),document.addEventListener(`astro:after-swap`,this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute(`await-children`)||document.readyState===`interactive`||document.readyState===`complete`)this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener(`DOMContentLoaded`,e),t.disconnect(),this.childrenConnectedCallback()},t=new MutationObserver(()=>{var t;((t=this.lastChild)==null?void 0:t.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue===`astro:end`&&(this.lastChild.remove(),e())});t.observe(this,{childList:!0}),document.addEventListener(`DOMContentLoaded`,e)}}async childrenConnectedCallback(){let e=this.getAttribute(`before-hydration-url`);e&&await import(e),this.start()}getRetryImportUrl(e){let t=new URL(e,document.baseURI);return t.searchParams.set(`astro-retry`,Date.now().toString()),t.toString()}async importWithRetry(e){try{return await import(e)}catch(t){return await new Promise(e=>setTimeout(e,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let t=this.getAttribute(`component-url`),n=new CustomEvent(`astro:hydration-error`,{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:t}});this.dispatchEvent(n)&&console.error(`[astro-island] Error hydrating ${t}`,e)}async start(){let e=JSON.parse(this.getAttribute(`opts`)),t=this.getAttribute(`client`);if(Astro[t]===void 0)window.addEventListener(`astro:${t}`,()=>this.start(),{once:!0});else try{await Astro[t](async()=>{let e=this.getAttribute(`renderer-url`);try{let[t,{default:n}]=await Promise.all([this.importWithRetry(this.getAttribute(`component-url`)),e?this.importWithRetry(e):Promise.resolve({default:()=>()=>{}})]),r=this.getAttribute(`component-export`)||`default`;if(r.includes(`.`)){this.Component=t;for(let e of r.split(`.`)){if(i.has(e)||!this.Component||typeof this.Component!=`object`&&typeof this.Component!=`function`||!Object.hasOwn(this.Component,e))throw Error(`Invalid component export path: ${r}`);this.Component=this.Component[e]}}else{if(i.has(r))throw Error(`Invalid component export path: ${r}`);this.Component=t[r]}return this.hydrator=n,this.hydrate}catch(e){return this.handleHydrationError(e),()=>{}}},e,this)}catch(e){this.handleHydrationError(e)}}attributeChangedCallback(){this.hydrate()}}r(o,`observedAttributes`,[`props`]),customElements.get(`astro-island`)||customElements.define(`astro-island`,o)}})();</script><astro-island uid="1wIMeU" prefix="r13" component-url="./assets/World.Bn9IBtuc.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;story&quot;:[0,&quot;A&quot;],&quot;page&quot;:[0,&quot;case&quot;],&quot;piece&quot;:[0,&quot;mint&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;World&quot;,&quot;value&quot;:true}" await-children><canvas class="world-canvas" aria-hidden="true"></canvas><!--astro:end--></astro-island><header class="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8 md:pt-5"><nav aria-label="Main" class="glass header-glass mx-auto max-w-6xl rounded-[26px] md:rounded-full"><div class="flex items-center justify-between gap-4 py-2 pl-5 pr-2"><a href="index.html" class="flex items-baseline gap-2 whitespace-nowrap text-chalk no-underline" aria-label="Minh Nguyen, home"><span class="display text-[1.6rem] leading-none">Minh Nguyen</span><span class="hidden font-mono text-xs uppercase tracking-[0.12em] text-fog lg:inline">Lead Product Designer</span></a><div class="flex items-center gap-1"><ul class="hidden items-center gap-1 md:flex"><li><a href="index.html#work" aria-current="page" class="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:text-chalk text-chalk bg-white/[0.07]">Work</a></li><li><a href="leadership.html" class="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:text-chalk text-fog">Leadership</a></li><li><a href="about.html" class="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:text-chalk text-fog">About</a></li><li><a href="resume.html" class="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:text-chalk text-fog">Résumé</a></li></ul><astro-island uid="Z14yjh3" prefix="r14" component-url="./assets/MotionToggle.-ltn2xd7.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;MotionToggle&quot;,&quot;value&quot;:true}" await-children><button type="button" aria-pressed="false" aria-label="Pause motion" title="Pause motion" class="grid h-9 w-9 place-items-center rounded-full text-fog transition-colors hover:text-chalk"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><g fill="currentColor"><rect x="4" y="3.5" width="2.6" height="9" rx="1"></rect><rect x="9.4" y="3.5" width="2.6" height="9" rx="1"></rect></g></svg></button><!--astro:end--></astro-island><astro-island uid="Z1srwuE" prefix="r20" component-url="./assets/SoundToggle.DpTjMWbg.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;SoundToggle&quot;,&quot;value&quot;:true}" await-children><button type="button" aria-pressed="false" aria-label="Sound" title="Sound off" class="group grid h-9 w-9 place-items-center rounded-full text-fog transition-colors hover:text-chalk"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect x="1" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect><rect x="5" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect><rect x="9" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect><rect x="13" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect><rect x="17" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect></svg></button><!--astro:end--></astro-island><a href="mailto:xpland.nguyen@gmail.com" class="whitespace-nowrap rounded-full bg-paper px-4 py-2 text-sm font-medium text-ink no-underline transition-transform hover:scale-[1.03]">Get in touch</a></div></div><ul class="flex justify-center gap-1 border-t border-white/10 px-2 py-1.5 md:hidden" aria-label="Sections"><li><a href="index.html#work" aria-current="page" class="block rounded-full px-3 py-1.5 text-[0.8125rem] no-underline bg-white/[0.08] text-chalk">Work</a></li><li><a href="leadership.html" class="block rounded-full px-3 py-1.5 text-[0.8125rem] no-underline text-fog">Leadership</a></li><li><a href="about.html" class="block rounded-full px-3 py-1.5 text-[0.8125rem] no-underline text-fog">About</a></li><li><a href="resume.html" class="block rounded-full px-3 py-1.5 text-[0.8125rem] no-underline text-fog">Résumé</a></li></ul></nav></header><main id="main" tabindex="-1"><article><astro-island uid="Z1JIeRS" prefix="r12" component-url="./assets/CaseHero.kr9WyhZ0.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;story&quot;:[0,{&quot;hero1&quot;:[0,&quot;Calm products for money, data and trust.&quot;],&quot;hero2&quot;:[0,&quot;Every claim comes with its receipt.&quot;],&quot;mapLine&quot;:[0,&quot;Designed from Ho Chi Minh City. Shipped for teams in Melbourne and London.&quot;],&quot;workTitle&quot;:[0,&quot;Eight cases. Each one proves something different.&quot;],&quot;habitsTitle&quot;:[0,&quot;I raise the bar by making it easier to meet.&quot;],&quot;close1&quot;:[0,&quot;Hiring a lead for something people have to trust?&quot;],&quot;close2&quot;:[0,&quot;Every claim comes with its receipt.&quot;],&quot;foldLabel&quot;:[0,&quot;Read the full case&quot;],&quot;nextLabel&quot;:[0,&quot;Next&quot;],&quot;id&quot;:[0,&quot;A&quot;],&quot;name&quot;:[0,&quot;The observation deck&quot;],&quot;shape&quot;:[0,&quot;pane&quot;],&quot;backdrop&quot;:[0,&quot;deck&quot;],&quot;heroEyebrow&quot;:[0,&quot;Minh Nguyen · Lead Product Designer&quot;],&quot;heroSub&quot;:[0,&quot;I lead design where a wrong number costs real money: a consumer stablecoin wallet built from the first screen for phone and desktop, credit workflows and merchant onboarding at NAB, and an AI-assisted regulatory tool.&quot;],&quot;reveal&quot;:[0,&quot;From up here the hand-offs show. The same details, copied from a spreadsheet into an email, then typed again. I design the system so they are typed once.&quot;],&quot;split&quot;:[1,[[0,&quot;Seen from&quot;],[0,&quot;above.&quot;]]],&quot;objectCaption&quot;:[0,&quot;Three tools and one email thread, mapped before a single screen. What the platform can check now runs in the background. When a request fails, the screen says why.&quot;],&quot;caseHeroHint&quot;:[0,&quot;Behind glass&quot;],&quot;frameLabel&quot;:[0,&quot;OBSERVATION DECK&quot;]}],&quot;visual&quot;:[0,{&quot;kind&quot;:[0,&quot;img&quot;],&quot;src&quot;:[0,&quot;img/issuer-03-proof-of-reserve-desktop.webp&quot;],&quot;alt&quot;:[0,&quot;Proof of reserve screen with redemption coverage, reserve ratio, composition and custodian concentration, each dated&quot;],&quot;caption&quot;:[0,&quot;Proof of Reserve. Every block carries an “as of” date. Placeholder figures.&quot;]}],&quot;eyebrow&quot;:[0,&quot;Unera · 2026 – now · 8 min read&quot;],&quot;title&quot;:[0,&quot;A stablecoin portal that shows its proof before it asks for your money.&quot;],&quot;proves&quot;:[0,&quot;Trust design and motion: proof-of-reserve, issue and redeem, copy that shows evidence first.&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;CaseHero&quot;,&quot;value&quot;:true}" await-children><section data-stage="" data-t0="0" data-t1="1" data-pin="1" class="relative bg-night" style="height:280vh"><div class="sticky top-0 h-[100dvh] overflow-hidden"><div class="absolute inset-0 overflow-hidden"><div class="absolute inset-0 will-change-transform" style="transform:scale(1.16)"><div class="absolute inset-0"><div class="absolute inset-0 overflow-hidden " aria-hidden="true"><canvas class="absolute inset-0 h-full w-full"></canvas><div class="grain absolute inset-0"></div></div><div class="absolute inset-0 flex items-center justify-center px-5 pb-10 pt-24 md:px-8"><div class="frame frame-pane  w-[min(960px,92vw,calc((100dvh_-_12rem)*1.6))]"><div class="frame-glass"><img src="img/issuer-03-proof-of-reserve-desktop.webp" alt="Proof of reserve screen with redemption coverage, reserve ratio, composition and custodian concentration, each dated" width="1200" height="750" loading="eager" decoding="async" class="block h-auto w-full"/></div><span class="frame-reflection" aria-hidden="true"></span><span class="frame-label" aria-hidden="true">OBSERVATION DECK</span></div></div></div></div><div aria-hidden="true" class="aperture-hole pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 will-change-[width,height]" style="border-radius:1.5vmin;box-shadow:0 0 0 300vmax hsl(201 100% 6%);width:34vmin;height:49.3vmin"><div class="aperture-edge absolute inset-0" style="border-radius:1.5vmin;opacity:1"></div></div><div class="absolute inset-0 overflow-y-auto" style="opacity:1;transform:none"><div class="case-copy mx-auto flex min-h-full max-w-6xl flex-col justify-end px-5 pb-20 pt-28 md:justify-center md:px-8"><p class="self-start rounded-lg bg-night/90 px-3 py-1 font-mono text-xs uppercase tracking-[0.16em] text-mist">Unera · 2026 – now · 8 min read</p><h1 class="display on-scene mt-4 max-w-[18ch] text-[2.4rem] leading-[0.98] sm:text-6xl md:mt-6 lg:text-[5rem]">A stablecoin portal that shows its proof before it asks for your money.</h1><p class="case-why on-scene mt-5 max-w-[44rem] text-base text-chalk md:mt-8 md:max-w-[30rem] md:text-lg"><span class="font-medium text-chalk">Why this case is here:</span> <!-- -->Trust design and motion: proof-of-reserve, issue and redeem, copy that shows evidence first.</p></div></div></div></div></section><!--astro:end--></astro-island><section class="mx-auto max-w-6xl px-5 py-24 md:px-8" aria-label="Case facts"><div class="grid gap-12 lg:grid-cols-[1fr_340px] lg:gap-16"><div><a href="index.html#work" class="inline-flex min-h-6 items-center font-mono text-xs uppercase tracking-[0.12em] text-fog no-underline hover:text-chalk">← All work</a><p class="display mt-8 max-w-[22ch] text-3xl leading-[1.1] md:text-5xl">Web app in build.</p><p class="mt-6 max-w-[48ch] text-mist">Seven scenes follow, then the full written case. Every number carries a stamp that says how I know it.</p></div><div class="paper self-start px-5 pt-5" role="group" aria-label="Case facts receipt"><div class="text-center text-xs tracking-[0.18em]">CASE FACTS</div><hr><dl class="space-y-2.5"><div><dt class="meta text-xs tracking-[0.1em]">ROLE</dt><dd>Lead Product Designer (contract)</dd></div><div><dt class="meta text-xs tracking-[0.1em]">TEAM</dt><dd>Product owner, QA and spec owner, back-end and front-end engineers, 1 part-time junior designer</dd></div><div><dt class="meta text-xs tracking-[0.1em]">STATUS</dt><dd>Web app in build</dd></div></dl><hr><ul class="space-y-3"><li><div class="row"><span>Unprovable claims removed from screen</span></div><div class="mt-1 flex flex-wrap items-center gap-2"><span class="tabular text-base font-semibold">3</span><span class="stamp" data-k="record" title="A count of real artefacts. &quot;Fully backed&quot;, &quot;instant&quot;, &quot;1:1&quot; (see case)">Record</span></div><div class="meta text-xs">&quot;Fully backed&quot;, &quot;instant&quot;, &quot;1:1&quot; (see case)</div></li><li><div class="row"><span>Hands-on time to buy with USDC</span></div><div class="mt-1 flex flex-wrap items-center gap-2"><span class="tabular text-base font-semibold">~20.5 s</span><span class="stamp" data-k="modelled" title="Calculated from stated assumptions. Keystroke-level model; excludes reading, waits and the wallet app">Modelled</span></div><div class="meta text-xs">Keystroke-level model; excludes reading, waits and the wallet app</div></li></ul></div></div></section><script>(function(){let e=(e,t,n)=>{let r=async()=>{await(await e())()},i=typeof t.value==`object`?t.value:void 0,a={rootMargin:i==null?void 0:i.rootMargin},o=new IntersectionObserver(e=>{for(let t of e)if(t.isIntersecting){o.disconnect(),r();break}},a);for(let e of n.children)o.observe(e)};(self.Astro||(self.Astro={})).visible=e,window.dispatchEvent(new Event(`astro:visible`))})();</script><astro-island uid="1p2UYA" prefix="r15" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The problem</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">Trust you can’t check isn’t trust.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">Early designs leaned on “fully backed” and “instant redemption”. A back-end engineer pointed out that one reserve asset is not strictly one to one. That comment changed the brief.</p></div><div class="scene-in scene-in-2 min-w-0"><div class="compare grid gap-8 sm:grid-cols-2"><div><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">Before</p><ul class="mt-4 space-y-4"><li class="compare-before text-lg leading-snug text-fog">“Fully backed” status</li><li class="compare-before text-lg leading-snug text-fog">“Instant redemption”</li><li class="compare-before text-lg leading-snug text-fog">“1:1 USD-backed” chip</li></ul></div><div><p class="font-mono text-xs uppercase tracking-[0.16em] text-champagne">After</p><ul class="mt-4 space-y-4"><li class="compare-after text-lg leading-snug text-chalk">Reserve ratio, with its date</li><li class="compare-after text-lg leading-snug text-chalk">“~1 business day”</li><li class="compare-after text-lg leading-snug text-chalk">Removed</li></ul></div></div></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="1qdruM" prefix="r16" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in lg:order-2"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The reframe</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">Four jobs, not nine.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">Buy, hold, redeem and prove. Earn, Bridge, Rewards, a business console and crypto payouts were cut from the first release. A money product people don’t yet trust shouldn’t widen the ways they can lose money.</p></div><div class="scene-in scene-in-2 min-w-0 lg:order-1"><dl class="grid gap-x-10 gap-y-10 sm:grid-cols-1"><div class="stat border-t border-rule pt-5"><dd class="tabular display text-[2.6rem] leading-none text-chalk md:text-6xl">9 → 4</dd><dt class="mt-3 text-mist">jobs in release one</dt><dd class="mt-3 flex flex-wrap items-center gap-2 text-sm text-fog"><span class="stamp" data-k="record" title="A count of real artefacts. Scope audit, June 2026">Record</span><span class="font-mono text-[0.75rem]">Scope audit, June 2026</span></dd></div><div class="stat border-t border-rule pt-5"><dd class="tabular display text-[2.6rem] leading-none text-chalk md:text-6xl">3</dd><dt class="mt-3 text-mist">claims taken off the screen</dt><dd class="mt-3 flex flex-wrap items-center gap-2 text-sm text-fog"><span class="stamp" data-k="record" title="A count of real artefacts. Could not be shown as evidence">Record</span><span class="font-mono text-[0.75rem]">Could not be shown as evidence</span></dd></div><div class="stat border-t border-rule pt-5"><dd class="tabular display text-[2.6rem] leading-none text-chalk md:text-6xl">259 + 95</dd><dt class="mt-3 text-mist">functional and responsive test cases written with the design</dt><dd class="mt-3 flex flex-wrap items-center gap-2 text-sm text-fog"><span class="stamp" data-k="record" title="A count of real artefacts. So QA tests intent">Record</span><span class="font-mono text-[0.75rem]">So QA tests intent</span></dd></div></dl></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="Z13BJl3" prefix="r27" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The design</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">Every reserve number shows its age and its source.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">A reserve number without a date is a number from an unknown time. Quarterly attestations come with a hash you can check. Proof never reads as profit: evidence in calm teal, the accent kept for actions.</p></div><div class="scene-in scene-in-2 min-w-0"><figure class="m-0"><div class="frame frame-pane  "><div class="frame-glass"><div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/issuer-reserve.webp" width="1200" height="920" aria-label="Proof of Reserve: the coverage bar fills, the reserve ratio gauge sweeps to 102.4 percent and the composition ring draws in, each block dated"><source src="anim/issuer-reserve.mp4" type="video/mp4"></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div></div><span class="frame-reflection" aria-hidden="true"></span><span class="frame-label" aria-hidden="true">OBSERVATION DECK</span></div><figcaption class="mt-4 font-mono text-[0.75rem] leading-relaxed text-fog">Recorded from the public Proof of Reserve page. Placeholder figures; custodians anonymised.</figcaption></figure></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="Z2iEXK4" prefix="r19" component-url="./assets/WorldBeats.gWLJPq9y.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;eyebrow&quot;:[0,&quot;The money, as a place&quot;],&quot;beats&quot;:[1,[[0,{&quot;title&quot;:[0,&quot;Three ways in, one coin.&quot;],&quot;body&quot;:[0,&quot;A bank deposit, USDC or USDT goes in. USD-S is created only after the payment clears.&quot;]}],[0,{&quot;title&quot;:[0,&quot;Four places it goes.&quot;],&quot;body&quot;:[0,&quot;To your wallet, to everyday spending, back to a bank, or to community centres funded by what the reserve earns.&quot;]}],[0,{&quot;title&quot;:[0,&quot;The proof stacks up beside it, dated.&quot;],&quot;body&quot;:[0,&quot;Each attestation is dated and hashed, so the proof is something you can check, not a badge. The moving lights are an illustration, not data.&quot;]}]]],&quot;fallback&quot;:[0,{&quot;src&quot;:[0,&quot;img/unera/mint-still.webp&quot;],&quot;alt&quot;:[0,&quot;Night view of a vault with three lanes of light flowing in and four flowing out, and dated proof slabs stacked beside it&quot;]}]}" ssr client="load" opts="{&quot;name&quot;:&quot;WorldBeats&quot;,&quot;value&quot;:true}" await-children><section data-stage="" data-t0="2" data-t1="3" data-pin="1" class="relative world-beats" style="height:390vh"><div class="sticky top-0 h-[100dvh] overflow-hidden"><div class="relative h-full"><div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-night/90 via-night/30 to-transparent lg:bg-gradient-to-r lg:from-night/85 lg:via-night/35 lg:to-transparent"></div><div class="absolute inset-0 flex items-start justify-center px-5 pt-28 lg:items-center lg:justify-end lg:px-12 lg:pt-0"><img src="img/unera/mint-still.webp" alt="Night view of a vault with three lanes of light flowing in and four flowing out, and dated proof slabs stacked beside it" loading="lazy" decoding="async" class="block h-auto w-[min(640px,90vw)] rounded-[18px] bg-paper p-2"/></div><div class="relative mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-16 md:px-8 lg:justify-center lg:pb-0"><div class="lg:max-w-[30rem]"><p class="w-fit rounded-lg bg-night/90 px-3 py-1 font-mono text-xs uppercase tracking-[0.16em] text-mist">The money, as a place</p><div class="relative mt-6 h-[15rem] sm:h-[16rem] lg:h-[20rem]"><div class="absolute inset-x-0 bottom-0 lg:bottom-auto" style="opacity:1;transform:none"><h3 class="display on-scene text-[2.1rem] leading-[1.02] text-chalk sm:text-5xl lg:text-[3.3rem]">Three ways in, one coin.</h3><p class="on-scene mt-5 max-w-[34rem] text-base leading-relaxed text-mist md:text-lg">A bank deposit, USDC or USDT goes in. USD-S is created only after the payment clears.</p></div><div class="absolute inset-x-0 bottom-0 lg:bottom-auto" style="opacity:0;transform:translateY(18px)"><h3 class="display on-scene text-[2.1rem] leading-[1.02] text-chalk sm:text-5xl lg:text-[3.3rem]">Four places it goes.</h3><p class="on-scene mt-5 max-w-[34rem] text-base leading-relaxed text-mist md:text-lg">To your wallet, to everyday spending, back to a bank, or to community centres funded by what the reserve earns.</p></div><div class="absolute inset-x-0 bottom-0 lg:bottom-auto" style="opacity:0;transform:translateY(18px)"><h3 class="display on-scene text-[2.1rem] leading-[1.02] text-chalk sm:text-5xl lg:text-[3.3rem]">The proof stacks up beside it, dated.</h3><p class="on-scene mt-5 max-w-[34rem] text-base leading-relaxed text-mist md:text-lg">Each attestation is dated and hashed, so the proof is something you can check, not a badge. The moving lights are an illustration, not data.</p></div></div><div class="mt-8 flex max-w-[16rem] gap-2" aria-hidden="true"><span class="relative h-[2px] flex-1 overflow-hidden rounded-full bg-white/15"><span class="absolute inset-y-0 left-0 bg-champagne" style="width:0%"></span></span><span class="relative h-[2px] flex-1 overflow-hidden rounded-full bg-white/15"><span class="absolute inset-y-0 left-0 bg-champagne" style="width:0%"></span></span><span class="relative h-[2px] flex-1 overflow-hidden rounded-full bg-white/15"><span class="absolute inset-y-0 left-0 bg-champagne" style="width:0%"></span></span></div></div></div><ol class="sr-only"><li>Three ways in, one coin.<!-- --> A bank deposit, USDC or USDT goes in. USD-S is created only after the payment clears.</li><li>Four places it goes.<!-- --> To your wallet, to everyday spending, back to a bank, or to community centres funded by what the reserve earns.</li><li>The proof stacks up beside it, dated.<!-- --> Each attestation is dated and hashed, so the proof is something you can check, not a badge. The moving lights are an illustration, not data.</li></ol></div></div></section><!--astro:end--></astro-island><astro-island uid="Z2fEbqR" prefix="r28" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The motion</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">Every moving piece shows money going somewhere.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">The client asked for a public page with more life in it. I recorded a product they admired, found five gaps in our first build and fixed them. Nothing moves off screen, and reduced motion gets still frames.</p></div><div class="scene-in scene-in-2 min-w-0"><figure class="m-0"><div class="frame frame-pane  "><div class="frame-glass"><div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/issuer-flow.webp" width="1200" height="560" aria-label="Diagram: deposits travel into USD-S in the middle, then out to a wallet, everyday spending, bank payouts and community centres"><source src="anim/issuer-flow.mp4" type="video/mp4"></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div></div><span class="frame-reflection" aria-hidden="true"></span><span class="frame-label" aria-hidden="true">OBSERVATION DECK</span></div><figcaption class="mt-4 font-mono text-[0.75rem] leading-relaxed text-fog">Recorded from the prototype.</figcaption></figure></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="Z2mSW96" prefix="r29" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in lg:order-2"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The slow paths</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">Delay has a state. It is not left to an error toast.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">Quotes hold for 60 seconds, with a countdown. The review says how far the final amount may move. The tracker shares its pattern with the wallet and announces its headline to screen readers.</p></div><div class="scene-in scene-in-2 min-w-0 lg:order-1"><figure class="m-0"><div class="frame frame-pane  "><div class="frame-glass"><img src="img/issuer-02-purchase-tracker-desktop.webp" alt="Purchase tracker in a delayed state with a plain explanation and next steps" width="1200" height="750" loading="lazy" decoding="async" class="block h-auto w-full"></div><span class="frame-reflection" aria-hidden="true"></span><span class="frame-label" aria-hidden="true">OBSERVATION DECK</span></div><figcaption class="mt-4 font-mono text-[0.75rem] leading-relaxed text-fog">The delayed state, designed.</figcaption></figure></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="Z1kHWpA" prefix="r23" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1fr]"><div class="scene-in"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">Leading the work</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">An engineer’s objection became the most useful input of the project.</h2></div><div class="scene-in scene-in-2 min-w-0"><ul class="led space-y-7"><li class="led-item text-lg leading-relaxed text-mist">Treated the one-to-one challenge as a design input, so engineers raise more problems early.</li><li class="led-item text-lg leading-relaxed text-mist">Split the work by lane: I own the flows, the proof and the rules; a junior designer owns the delayed, short and failed cases inside them.</li><li class="led-item text-lg leading-relaxed text-mist">Wrote 259 functional and 95 responsive test cases next to the screens.</li><li class="led-item text-lg leading-relaxed text-mist">Had a review call transcribed and traced every item, and found changes we had dropped.</li></ul></div></div></astro-slot></section><!--astro:end--></astro-island><div class="mx-auto mt-12 max-w-6xl px-5 md:px-8"><details class="case-fold mt-16 border-t border-rule"><summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-8"><span class="display text-3xl md:text-5xl">Read the full case</span><span class="fold-icon glass grid h-11 w-11 shrink-0 place-items-center rounded-full" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12" class="fold-plus"></path></svg></span></summary><div class="prose-case pb-8"><div class="prose-case"><p><strong>In one line:</strong> Unera issues hUSD, a US-dollar stablecoin. People buy it, hold it and redeem it through a web portal I designed. The hard part wasn&#39;t the flows. It was making a money product believable without saying anything it couldn&#39;t prove.</p>
+<div class="table-wrap"><table>
+
+<tbody><tr>
+<td><strong>Role</strong></td>
+<td>Lead Product Designer (contract). I own the portal&#39;s design and its design system, and I lead a part-time junior designer who designs its error and edge states.</td>
+</tr>
+<tr>
+<td><strong>Team</strong></td>
+<td>Product owner, back-end and front-end engineers, QA and spec owner, 1 part-time junior designer</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>Web app, desktop and mobile</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Designed and handed to engineering. Not launched, so no live usage data yet.</td>
+</tr>
+</tbody></table></div>
+<h2>Thirty-second version</h2>
+<ul>
+<li><strong>Problem.</strong> A stablecoin is only worth what people believe backs it. Early designs leaned on claims such as &quot;fully backed&quot; and &quot;instant redemption&quot;. Some were not strictly true, and none could be checked on screen.</li>
+<li><strong>What I did.</strong> Cut the first release down to buy, hold, redeem and prove. Removed every claim the product couldn&#39;t back. Rebuilt Proof of Reserve so each number shows how fresh it is and where it came from. Split the work so I own the flows and rules and the junior designer owns the slow, failed and mismatched cases inside them.</li>
+<li><strong>Where it stands.</strong> About 12 screens, 19 components and about 124 tokens, with 259 functional and 95 responsive test cases written next to the design. Those are counts of work, not results. Before launch I set pass bars, modelled the main task at about 20 seconds of hands-on time, and wrote a five-person test to replace the model.</li>
+</ul>
+<h3>How the work ran</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What happened</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Discover</td>
+<td>Audit of the existing scope and copy, June 2026. Found five features beyond what a first release needed and three trust claims that couldn&#39;t be shown on screen.</td>
+</tr>
+<tr>
+<td>Reframe</td>
+<td>From &quot;promise safety&quot; to &quot;show evidence a person can check&quot;. Triggered by an engineer&#39;s comment that one reserve asset is not strictly one to one.</td>
+</tr>
+<tr>
+<td>Quality bar</td>
+<td>Test cases written with the design (259 functional, 95 responsive) so QA tests intent, not guesses. Every claim on screen must have its evidence on the same screen.</td>
+</tr>
+<tr>
+<td>Design</td>
+<td>Buy, hold, redeem and Proof of Reserve flows; quote expiry, estimate vs actual, delayed, failed and mismatched deposits. Public home page and motion layer added 8 September.</td>
+</tr>
+<tr>
+<td>Validate</td>
+<td>Feedback call 24 July (product owner, back-end); Proof of Reserve review 6 August; full audit 13 September, which fixed ARIA labels, Escape-key handling and contrast. One item is still open: modals don&#39;t trap keyboard focus yet. Spoken feedback re-transcribed so nothing was dropped.</td>
+</tr>
+<tr>
+<td>Ship or measure</td>
+<td>Front-end building from the prototype. Five-person test written. Not launched, and no launch date is public.</td>
+</tr>
+</tbody></table></div>
+<figure>
+  <img src="img/issuer-03-proof-of-reserve-desktop.webp" alt="Proof of reserve screen with redemption coverage, reserve ratio, composition and custodian concentration, each dated" width="1200" height="750" loading="lazy" />
+  <figcaption>Proof of Reserve. Every block carries an "as of" date. Placeholder figures; custodians anonymised.</figcaption>
+</figure>
+
+<h2>Trust you can&#39;t check isn&#39;t trust.</h2>
+<p>Most stablecoin sites open with a promise: fully backed, one to one, redeem instantly. People have heard that before, sometimes just before a coin collapsed.</p>
+<p>In our first review, a back-end engineer pointed out that one of the reserve assets, USDC, is not strictly one to one. That one comment changed the brief. If a single badge on the screen could be argued with, the whole page was weaker for it.</p>
+<p>The design question became: <strong>how do we earn belief with evidence a person can check, and never with a claim?</strong></p>
+<h2>Three claims came off the screen because we couldn&#39;t prove them.</h2>
+<p>I went through the portal line by line with one test: could we show the evidence, right here, today?</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Before</th>
+<th>After</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&quot;Fully backed&quot; status</td>
+<td>Reserve ratio with its date</td>
+<td>A ratio can be checked. A status can&#39;t.</td>
+</tr>
+<tr>
+<td>&quot;Instant redemption&quot;</td>
+<td>&quot;~1 business day&quot;</td>
+<td>Some reserves take a day to turn into cash.</td>
+</tr>
+<tr>
+<td>&quot;1:1 USD-backed&quot; chip</td>
+<td>Removed</td>
+<td>Not strictly true for every reserve asset.</td>
+</tr>
+</tbody></table></div>
+<p>The brand rule that came out of this: <strong>proof never reads as profit.</strong> Reserve numbers use a calm teal. The yellow accent is kept for actions, so evidence never looks like an advert.</p>
+<h2>Every reserve number shows its age and its source.</h2>
+<p>A reserve number without a date is a number from an unknown time. So every block on the Proof of Reserve page shows when it was measured and where it came from. Quarterly attestations come with a hash you can check, and a short docs page explains how.</p>
+<h2>The first release does four jobs, not nine.</h2>
+<p>The early scope had Earn, Bridge, Rewards, a business console and crypto payouts. I cut all of them from the first release. A money product people don&#39;t yet trust shouldn&#39;t be widening the ways they can lose money.</p>
+<h2>The motion shows money moving, and stops when you look away.</h2>
+<p>In September the client asked for a public home page with the energy of a product they admired, only softer. I recorded that product, compared it with our first build and found five gaps: the hero arrived as one block, the globe looked flat, the flow diagram was too sparse, the charts had no live value on them, and whole sections appeared at once. I fixed all five.</p>
+<p>The rules I kept to: every moving piece shows money going somewhere, the easing is slow, and nothing moves off screen. People who ask their device for reduced motion get still frames.</p>
+<figure>
+  <div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/issuer-hero.webp" width="1200" height="577" aria-label="Public home page: the headline and buttons arrive one after another, and a dotted globe turns while new deposits land on it. The one-to-one wording is blurred."><source src="anim/issuer-hero.mp4" type="video/mp4" /></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div>
+  <figcaption>The public home page from the September brief, recorded from the prototype. The brief brought the "1:1" wording back on this page; I've blurred it here because the portal itself dropped that claim. Placeholder figures.</figcaption>
+</figure>
+
+<figure>
+  <div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/issuer-flow.webp" width="1200" height="560" aria-label="Diagram: deposits from a bank, USDC and USDT travel into USD-S in the middle, then out to a wallet, everyday spending, bank payouts and community centres"><source src="anim/issuer-flow.mp4" type="video/mp4" /></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div>
+  <figcaption>"One dollar in, one USD-S out." Each lane runs at its own pace, and a light blooms where money arrives. Commercial terms removed from the recording.</figcaption>
+</figure>
+
+<figure>
+  <div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/issuer-proof.webp" width="1200" height="327" aria-label="Proof band: circulating supply draws in over 90 days with its latest value pinned to the line, next to total reserves and the reserve ratio"><source src="anim/issuer-proof.mp4" type="video/mp4" /></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div>
+  <figcaption>The proof band. The latest value rides the end of the line, so the chart always says what "now" is. Placeholder figures.</figcaption>
+</figure>
+
+<p>The same rules run through the other public pages, the ones a visitor sees before signing up.</p>
+<figure>
+  <div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/issuer-usecases.webp" width="1200" height="689" aria-label="Use cases page: an orbit turns around a coin while the tabs move from paying, to sending, to giving, each with its own small example. Some lines are blurred."><source src="anim/issuer-usecases.mp4" type="video/mp4" /></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div>
+  <figcaption>Use cases, before logging in. Each tab carries one small example: a day of payments, a transfer between two wallets, reserve interest routed to community centres. The one-to-one lines and the name of the body that allocates the interest are blurred. Placeholder figures.</figcaption>
+</figure>
+
+<figure>
+  <div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/issuer-reserve.webp" width="1200" height="920" aria-label="Proof of Reserve: the coverage bar fills, the reserve ratio gauge sweeps to 102.4 percent, the composition ring draws in and total reserves count up"><source src="anim/issuer-reserve.mp4" type="video/mp4" /></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div>
+  <figcaption>Proof of Reserve, before logging in. Coverage fills, the ratio sweeps to its value and the composition draws in, and every block keeps its date. Placeholder figures; custodians anonymised.</figcaption>
+</figure>
+
+<figure>
+  <div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/issuer-feed.webp" width="1200" height="480" aria-label="Network activity: completed issuances and redemptions slide in at the top of the list, each with an amount and a shortened transaction link"><source src="anim/issuer-feed.mp4" type="video/mp4" /></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div>
+  <figcaption>Network activity: completed issuances and redemptions stream in, aggregated, with no wallet addresses. Sped up here to one event every two seconds; the prototype adds one every nine. Placeholder data.</figcaption>
+</figure>
+
+<h2>The slow paths are designed, not left to an error toast.</h2>
+<ul>
+<li><strong>Quotes expire.</strong> A purchase quote holds for 60 seconds, and the screen shows the countdown. People can type the amount on either side of the trade.</li>
+<li><strong>Estimate vs actual.</strong> The review shows an estimated amount and says the final amount may move within a stated limit. After back-end input, we added a clear choice for when the deposit doesn&#39;t match the order.</li>
+<li><strong>Delays have a state.</strong> The purchase tracker shares its pattern with the wallet. It has a live headline that screen readers announce, and a designed <em>Delayed</em> state.</li>
+</ul>
+<figure>
+  <div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/issuer-tracker.webp" width="1200" height="800" aria-label="Purchase tracker: deposit seen, network confirmations, compliance checks and minting tick off one by one, then the screen says 5,000 USD-S is yours"><source src="anim/issuer-tracker.mp4" type="video/mp4" /></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div>
+  <figcaption>The tracker's good day: four named stages, each saying whether you need to do anything. Placeholder data.</figcaption>
+</figure>
+
+<h2>I own the flows and the rules. The junior designer owns the bad days inside them.</h2>
+<p>A portal like this has one happy path and a long tail of cases: slow networks, short deposits, failed checks. As the work grew, I split it into two lanes so it could run in parallel without two designers inventing two styles.</p>
+<figure class="lanes">
+  <div class="lane">
+    <p class="lane-h"><span>My lane</span> The flow, the proof, the rules</p>
+    <ul>
+      <li><img src="img/split/issuer-review.webp" alt="Review and confirm step: estimated amount, fee, funding method and the refund terms, before any payment" width="640" height="480" loading="lazy" /><span>Review: estimate, fee and refund terms before you pay</span></li>
+      <li><img src="img/split/issuer-proof.webp" alt="Proof of Reserve: redemption coverage, reserve ratio and composition, each block dated" width="640" height="480" loading="lazy" /><span>Proof of Reserve: every block dated</span></li>
+      <li><img src="img/split/issuer-done.webp" alt="Tracker finished: four stages ticked and the new balance confirmed" width="640" height="480" loading="lazy" /><span>The tracker pattern and its stage names</span></li>
+    </ul>
+  </div>
+  <p class="lane-hand">I hand over the flow, the spec's list of failure cases and the written state rules. Every state comes back to me for review before engineering sees it.</p>
+  <div class="lane lane-b">
+    <p class="lane-h"><span>Junior designer's lane</span> The bad days, inside those rules</p>
+    <ul>
+      <li><img src="img/split/issuer-delayed.webp" alt="Tracker in a delayed state: taking a little longer than usual, nothing to do, safe to leave" width="640" height="480" loading="lazy" /><span>Delayed: "That's normal when the network is busy."</span></li>
+      <li><img src="img/split/issuer-mismatch.webp" alt="Deposit mismatch: the amount received is outside the 5% range, with two choices, accept the adjusted amount or request a full refund" width="640" height="480" loading="lazy" /><span>Short deposit: two clear choices, no dead end</span></li>
+      <li><img src="img/split/issuer-failed.webp" alt="Failed purchase: nothing was minted and nothing was taken, with what to do next and a Try again button" width="640" height="480" loading="lazy" /><span>Failed: "Nothing was minted and nothing was taken."</span></li>
+    </ul>
+  </div>
+  <figcaption>Real prototype screens, anonymised. Placeholder figures.</figcaption>
+</figure>
+
+<p>The rules both lanes work to are written down, in the design manual and in the tracker spec the portal shares with the wallet, so a review checks the rule and not my taste:</p>
+<ul>
+<li>Every failure case the spec names gets its own state, marked as blocking or not. A blocking state disables the main button.</li>
+<li>Failure, waiting and success are different components. A failed purchase never borrows the success badge.</li>
+<li>Every sentence says what happened to the money and whether the person needs to do anything.</li>
+</ul>
+<h2>Before launch: a bar, a model, and the test that replaces the model.</h2>
+<p>Nothing is live, so there are no results to show. What I can do before launch is set the bar, model the main task, and write the test that will replace the model with real data.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Bar</th>
+<th>Receipt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hands-on time to buy USD-S with USDC, up to &quot;I&#39;ve sent it&quot;</td>
+<td>About 20.5 s: 7 clicks, 4 keystrokes</td>
+<td><span class="stamp" data-k="modelled">Modelled</span></td>
+</tr>
+<tr>
+<td>Hands-on time from seeing the quote to confirming it</td>
+<td>About 5.3 s of the 60-second quote</td>
+<td><span class="stamp" data-k="modelled">Modelled</span></td>
+</tr>
+<tr>
+<td>Testers who confirm before the quote expires, without rushing</td>
+<td>4 of 5</td>
+<td><span class="stamp" data-k="target">Target</span></td>
+</tr>
+<tr>
+<td>Testers who can say what backs USD-S after one visit to Proof of Reserve</td>
+<td>4 of 5</td>
+<td><span class="stamp" data-k="target">Target</span></td>
+</tr>
+<tr>
+<td>Testers who pick the option they meant on a short deposit</td>
+<td>4 of 5</td>
+<td><span class="stamp" data-k="target">Target</span></td>
+</tr>
+<tr>
+<td>System Usability Scale across the session</td>
+<td>70 or higher</td>
+<td><span class="stamp" data-k="target">Target</span></td>
+</tr>
+</tbody></table></div>
+<p><strong>Read these carefully.</strong> The model is a keystroke-level model with standard times: 1.1 s to point, 0.2 s to click, 0.28 s per keystroke, 0.4 s to move a hand between mouse and keyboard, and 1.35 s to decide before each step. It leaves out reading, network waits and the wallet app, so real times will be longer. I use it to compare designs and to check the quote window, not to predict a result. The targets are mine and still need the product owner&#39;s agreement.</p>
+<details>
+<summary>The five-person test script</summary>
+
+<div class="table-wrap"><table>
+
+<tbody><tr>
+<td><strong>Who</strong></td>
+<td>Five people who hold some crypto but have never bought a stablecoin from an issuer</td>
+</tr>
+<tr>
+<td><strong>Setup</strong></td>
+<td>Moderated, 40 minutes, prototype with a test wallet. Think aloud.</td>
+</tr>
+<tr>
+<td><strong>Task 1</strong></td>
+<td>Buy 500 USD-S with USDC. <em>Measure:</em> finished unaided, quote expiries, time on task.</td>
+</tr>
+<tr>
+<td><strong>Task 2</strong></td>
+<td>Find out what backs USD-S, then tell me in your own words. <em>Measure:</em> answer checked against the Proof of Reserve page.</td>
+</tr>
+<tr>
+<td><strong>Task 3</strong></td>
+<td>Your deposit arrives short (we trigger it). Decide what to do. <em>Measure:</em> did they pick the option they meant?</td>
+</tr>
+<tr>
+<td><strong>Task 4</strong></td>
+<td>Redeem 100 USD-S to your bank. <em>Measure:</em> do they know when the money arrives?</td>
+</tr>
+<tr>
+<td><strong>After</strong></td>
+<td>SUS questionnaire, then &quot;What would stop you buying more?&quot;</td>
+</tr>
+<tr>
+<td><strong>If a bar is missed</strong></td>
+<td>Change the design, then retest with five new people. The model is replaced by these results.</td>
+</tr>
+</tbody></table></div>
+</details>
+
+<h2>Decision log</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Options</th>
+<th>What I chose and why</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Trust claims</td>
+<td>Keep the marketing badges / show dated evidence</td>
+<td><strong>Dated evidence.</strong> An engineer&#39;s challenge showed one badge wasn&#39;t strictly true.</td>
+</tr>
+<tr>
+<td>Release 1 scope</td>
+<td>Full feature set / buy, hold, redeem, prove</td>
+<td><strong>Four jobs.</strong> Earn trust before adding ways to move money.</td>
+</tr>
+<tr>
+<td>Deposit address</td>
+<td>New address per request, expiring / one permanent address</td>
+<td><strong>Permanent.</strong> The first design gave a new address for every request, and each one expired after 60 minutes.</td>
+</tr>
+<tr>
+<td>Saved cards</td>
+<td>Card vault / guest checkout</td>
+<td><strong>Guest checkout.</strong> Back-end constraint; it also stores less sensitive data.</td>
+</tr>
+<tr>
+<td>Where to choose the funding method</td>
+<td>On the amount step / on the payment step</td>
+<td><strong>Amount step.</strong> I moved it to the payment step after the 24 July feedback call, then moved it back. The final flow asks for the method before the currency.</td>
+</tr>
+<tr>
+<td>Header size</td>
+<td>Large balance hero / compact header</td>
+<td><strong>Compact.</strong> Cutting the header from 5rem to 2.5rem kept the main actions above the fold on phones.</td>
+</tr>
+<tr>
+<td>Who designs the failure states</td>
+<td>Me, after the flows / a second designer, in parallel, to written rules</td>
+<td><strong>In parallel.</strong> The happy path and its failures were designed at the same time, and the rules kept them in one voice.</td>
+</tr>
+</tbody></table></div>
+<h2>How I led</h2>
+<ul>
+<li><strong>Grew a UI brief into a design practice.</strong> I was hired as a UI/UX designer for the interface and later promoted to lead. The scope audit and the evidence rule on this portal were two of the steps that turned it into product design work. The <a href="unera-huma.html">Huma case</a> has the dated timeline.</li>
+<li><strong>Treated an engineer&#39;s objection as a design input.</strong> The USDC comment was the most useful feedback of the project. Engineers raise more problems early when they see their last one change the product.</li>
+<li><strong>Split the work by lane, not by screen.</strong> I kept the flows, the proof and the rules. The junior designer took the failure states, and I reviewed each one against the written rules before hand-off.</li>
+<li><strong>Wrote the tests with the design.</strong> 259 test cases and 95 responsive test cases sit next to the screens, so QA tests what I intended and not what they guess.</li>
+<li><strong>Caught what we missed.</strong> Some spoken feedback from a review call didn&#39;t make it into the notes. I had the recording transcribed and traced every item, and found changes we had dropped.</li>
+</ul>
+<h2>What I&#39;ll measure when it&#39;s live</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Purchases completed after a quote is shown</td>
+<td>Funnel analytics; quote expiries counted separately</td>
+</tr>
+<tr>
+<td>Proof of Reserve page visits before a first purchase</td>
+<td>Analytics path analysis</td>
+</tr>
+<tr>
+<td>Redemptions that end in a support ticket</td>
+<td>Ops data per 100 redemptions</td>
+</tr>
+<tr>
+<td>Short or mismatched deposits, and which option people pick</td>
+<td>Back-end events, weekly</td>
+</tr>
+<tr>
+<td>How often the reserve data is refreshed and verified</td>
+<td>The client&#39;s own trust measure; each block&#39;s &quot;as of&quot; date shows it</td>
+</tr>
+</tbody></table></div>
+<h2>What I&#39;d do differently</h2>
+<p>The funding-method step moved twice: forward after one review, then back after another. Both moves had reasons, but I made the first change on one person&#39;s comment without testing it. I&#39;d now prototype both orders and put them in front of five people before changing a flow that engineering has already built.</p>
+<p>The design docs also drifted from the tokens. The colour changed from teal-navy to near-black, but parts of the readme still say the old name. I now update the docs in the same change as the tokens, or the change isn&#39;t done.</p>
+<hr>
+<p><em>Prototype screens and recordings with placeholder figures. Custodian, partner and reference-product names are removed. Unera and hUSD are named with the client&#39;s written approval.</em></p>
+</div></div></details></div><nav aria-label="Next case" class="mx-auto mt-32 max-w-6xl px-5 md:px-8"><a href="credit-workflows.html" class="group block border-t border-rule pt-10 no-underline"><span class="font-mono text-xs uppercase tracking-[0.12em] text-fog">Next · Straight-through processing · password</span><span class="display mt-4 block max-w-[24ch] text-4xl transition-colors group-hover:text-white md:text-6xl">Hundreds of millions approved, then a day of email. In testing, the hand-off took five minutes.</span></a></nav></article></main><astro-island uid="1dAqa4" prefix="r21" component-url="./assets/Chat.BzV9p4aY.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;Chat&quot;,&quot;value&quot;:true}" await-children><button type="button" class="chat-launcher" aria-expanded="false" aria-controls="chat-panel"><span class="chat-dot" aria-hidden="true"></span>Ask about Minh</button><section id="chat-panel" role="dialog" aria-modal="false" aria-labelledby="chat-title" class="chat-panel" hidden=""><div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3"><div><h2 id="chat-title" class="text-[0.9375rem] font-medium text-chalk">Ask about Minh</h2><p class="font-mono text-xs uppercase tracking-[0.1em] text-fog">Checked answers only</p></div><div class="flex items-center gap-1"><button type="button" class="chat-icon" aria-label="Start over" title="Start over"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8a5 5 0 1 0 1.6-3.7M3 2.5v2.8h2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button type="button" class="chat-icon" aria-label="Close chat" title="Close"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></button></div></div><div class="chat-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0" aria-label="Conversation"></div><form class="flex items-center gap-2 border-t border-white/10 p-3"><label for="chat-input" class="sr-only">Type a question about Minh</label><input id="chat-input" placeholder="Ask anything about Minh" autoComplete="off" maxLength="300" class="chat-input" value=""/><button type="submit" class="chat-send" aria-label="Send" disabled=""><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5L14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></form></section><!--astro:end--></astro-island><footer class="mt-32 border-t border-rule bg-night"><div class="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.2fr_1fr] md:px-8"><div><p class="display text-4xl md:text-5xl">How to read the numbers here.</p><p class="mt-4 max-w-[52ch] text-mist">Every figure on this site carries a stamp that says how I know it. If a number came from a test with five people, it says so. If it is someone’s estimate, it says whose.</p></div><dl class="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2"><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="live">Live</span></dt><dd class="text-sm text-fog">Measured in production</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="tested">Tested</span></dt><dd class="text-sm text-fog">Measured in usability testing, with sample size</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="modelled">Modelled</span></dt><dd class="text-sm text-fog">Calculated from stated assumptions</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="estimate">Estimate</span></dt><dd class="text-sm text-fog">Someone’s judgement, and I say whose</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="record">Record</span></dt><dd class="text-sm text-fog">A count of real artefacts</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="progress">In progress</span></dt><dd class="text-sm text-fog">Not shipped yet</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="target">Target</span></dt><dd class="text-sm text-fog">A goal set before launch, not a result</dd></div></dl></div><div class="mx-auto flex max-w-6xl flex-col gap-3 border-t border-rule px-5 py-8 text-sm text-fog md:flex-row md:items-center md:justify-between md:px-8"><p>The detail of my NAB work sits behind a password. Ask me for it.</p><p>No cookies, no trackers. <a href="about.html#accessibility">Accessibility</a>. © 2026 Minh Nguyen</p></div></footer></body></html>

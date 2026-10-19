@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-1BvDVWLr3QCC20uHhUDi27eDFVJpk1uMQJGIWKUks2I=' 'sha256-UIrFqcaitjA3OKa9mHKajg3N+0Y7tW9+y0o3QmMFeZQ=' 'sha256-0O7iB6zr9x0r6X6eWYITC9V5q+yWCGAoFvcysBGbY9Q='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Huma wallet · Minh Nguyen</title><meta name="description" content="Huma wallet: One wallet for giving, sending and earning, designed so people can see where every dollar went."><meta name="author" content="Minh Nguyen"><meta property="og:title" content="Huma wallet · Minh Nguyen"><meta property="og:description" content="Huma wallet: One wallet for giving, sending and earning, designed so people can see where every dollar went."><meta property="og:type" content="website"><meta property="og:image" content="https://minhdesign.xyz/og.png"><meta name="theme-color" content="#002a42"><link rel="icon" href="favicon.svg" type="image/svg+xml"><script src="boot.js"></script><link rel="stylesheet" href="./assets/Base.BJOL_-Ho.css"></head><body class="min-h-dvh"><a class="skip" href="#main">Skip to content</a><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(function(){let e=async e=>{await(await e())()};(self.Astro||(self.Astro={})).load=e,window.dispatchEvent(new Event(`astro:load`))})();</script><script>(function(){function e(t){"@babel/helpers - typeof";return e=typeof Symbol==`function`&&typeof Symbol.iterator==`symbol`?function(e){return typeof e}:function(e){return e&&typeof Symbol==`function`&&e.constructor===Symbol&&e!==Symbol.prototype?`symbol`:typeof e},e(t)}function t(t,n){if(e(t)!=`object`||!t)return t;var r=t[Symbol.toPrimitive];if(r!==void 0){var i=r.call(t,n||`default`);if(e(i)!=`object`)return i;throw TypeError(`@@toPrimitive must return a primitive value.`)}return(n===`string`?String:Number)(t)}function n(n){var r=t(n,`string`);return e(r)==`symbol`?r:r+``}function r(e,t,r){return(t=n(t))in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}let i=/* @__PURE__ */ new Set([`__proto__`,`constructor`,`prototype`]);{let e={0:e=>a(e),1:e=>n(e),2:e=>new RegExp(e),3:e=>new Date(e),4:e=>new Map(n(e)),5:e=>new Set(n(e)),6:e=>BigInt(e),7:e=>new URL(e),8:e=>new Uint8Array(e),9:e=>new Uint16Array(e),10:e=>new Uint32Array(e),11:e=>1/0*e},t=t=>{let[n,r]=t;return n in e?e[n](r):void 0},n=e=>e.map(t),a=e=>typeof e!=`object`||!e?e:Object.fromEntries(Object.entries(e).map(([e,n])=>[e,t(n)]));class o extends HTMLElement{constructor(...e){super(...e),r(this,`Component`,void 0),r(this,`hydrator`,void 0),r(this,`hydrate`,async()=>{var e;if(!this.hydrator||!this.isConnected)return;let t=(e=this.parentElement)==null?void 0:e.closest(`astro-island[ssr]`);if(t){t.addEventListener(`astro:hydrate`,this.hydrate,{once:!0});return}let n=this.querySelectorAll(`astro-slot`),r={},i=this.querySelectorAll(`template[data-astro-template]`);for(let e of i){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`data-astro-template`)||`default`]=e.innerHTML,e.remove())}for(let e of n){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`name`)||`default`]=e.innerHTML)}let o;try{o=this.hasAttribute(`props`)?a(JSON.parse(this.getAttribute(`props`))):{}}catch(e){let t=this.getAttribute(`component-url`)||`<unknown>`,n=this.getAttribute(`component-export`);throw n&&(t+=` (export ${n})`),console.error(`[hydrate] Error parsing props for component ${t}`,this.getAttribute(`props`),e),e}await this.hydrator(this)(this.Component,o,r,{client:this.getAttribute(`client`)}),this.removeAttribute(`ssr`),this.dispatchEvent(new CustomEvent(`astro:hydrate`))}),r(this,`unmount`,()=>{this.isConnected||this.dispatchEvent(new CustomEvent(`astro:unmount`))})}disconnectedCallback(){document.removeEventListener(`astro:after-swap`,this.unmount),document.addEventListener(`astro:after-swap`,this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute(`await-children`)||document.readyState===`interactive`||document.readyState===`complete`)this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener(`DOMContentLoaded`,e),t.disconnect(),this.childrenConnectedCallback()},t=new MutationObserver(()=>{var t;((t=this.lastChild)==null?void 0:t.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue===`astro:end`&&(this.lastChild.remove(),e())});t.observe(this,{childList:!0}),document.addEventListener(`DOMContentLoaded`,e)}}async childrenConnectedCallback(){let e=this.getAttribute(`before-hydration-url`);e&&await import(e),this.start()}getRetryImportUrl(e){let t=new URL(e,document.baseURI);return t.searchParams.set(`astro-retry`,Date.now().toString()),t.toString()}async importWithRetry(e){try{return await import(e)}catch(t){return await new Promise(e=>setTimeout(e,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let t=this.getAttribute(`component-url`),n=new CustomEvent(`astro:hydration-error`,{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:t}});this.dispatchEvent(n)&&console.error(`[astro-island] Error hydrating ${t}`,e)}async start(){let e=JSON.parse(this.getAttribute(`opts`)),t=this.getAttribute(`client`);if(Astro[t]===void 0)window.addEventListener(`astro:${t}`,()=>this.start(),{once:!0});else try{await Astro[t](async()=>{let e=this.getAttribute(`renderer-url`);try{let[t,{default:n}]=await Promise.all([this.importWithRetry(this.getAttribute(`component-url`)),e?this.importWithRetry(e):Promise.resolve({default:()=>()=>{}})]),r=this.getAttribute(`component-export`)||`default`;if(r.includes(`.`)){this.Component=t;for(let e of r.split(`.`)){if(i.has(e)||!this.Component||typeof this.Component!=`object`&&typeof this.Component!=`function`||!Object.hasOwn(this.Component,e))throw Error(`Invalid component export path: ${r}`);this.Component=this.Component[e]}}else{if(i.has(r))throw Error(`Invalid component export path: ${r}`);this.Component=t[r]}return this.hydrator=n,this.hydrate}catch(e){return this.handleHydrationError(e),()=>{}}},e,this)}catch(e){this.handleHydrationError(e)}}attributeChangedCallback(){this.hydrate()}}r(o,`observedAttributes`,[`props`]),customElements.get(`astro-island`)||customElements.define(`astro-island`,o)}})();</script><astro-island uid="Z1DLplI" prefix="r14" component-url="./assets/World.Bn9IBtuc.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;story&quot;:[0,&quot;A&quot;],&quot;page&quot;:[0,&quot;case&quot;],&quot;piece&quot;:[0,&quot;tracker&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;World&quot;,&quot;value&quot;:true}" await-children><canvas class="world-canvas" aria-hidden="true"></canvas><!--astro:end--></astro-island><header class="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8 md:pt-5"><nav aria-label="Main" class="glass header-glass mx-auto max-w-6xl rounded-[26px] md:rounded-full"><div class="flex items-center justify-between gap-4 py-2 pl-5 pr-2"><a href="index.html" class="flex items-baseline gap-2 whitespace-nowrap text-chalk no-underline" aria-label="Minh Nguyen, home"><span class="display text-[1.6rem] leading-none">Minh Nguyen</span><span class="hidden font-mono text-xs uppercase tracking-[0.12em] text-fog lg:inline">Lead Product Designer</span></a><div class="flex items-center gap-1"><ul class="hidden items-center gap-1 md:flex"><li><a href="index.html#work" aria-current="page" class="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:text-chalk text-chalk bg-white/[0.07]">Work</a></li><li><a href="leadership.html" class="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:text-chalk text-fog">Leadership</a></li><li><a href="about.html" class="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:text-chalk text-fog">About</a></li><li><a href="resume.html" class="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:text-chalk text-fog">Résumé</a></li></ul><astro-island uid="Z14yjh3" prefix="r15" component-url="./assets/MotionToggle.-ltn2xd7.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;MotionToggle&quot;,&quot;value&quot;:true}" await-children><button type="button" aria-pressed="false" aria-label="Pause motion" title="Pause motion" class="grid h-9 w-9 place-items-center rounded-full text-fog transition-colors hover:text-chalk"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><g fill="currentColor"><rect x="4" y="3.5" width="2.6" height="9" rx="1"></rect><rect x="9.4" y="3.5" width="2.6" height="9" rx="1"></rect></g></svg></button><!--astro:end--></astro-island><astro-island uid="Z1srwuE" prefix="r16" component-url="./assets/SoundToggle.DpTjMWbg.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;SoundToggle&quot;,&quot;value&quot;:true}" await-children><button type="button" aria-pressed="false" aria-label="Sound" title="Sound off" class="group grid h-9 w-9 place-items-center rounded-full text-fog transition-colors hover:text-chalk"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect x="1" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect><rect x="5" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect><rect x="9" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect><rect x="13" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect><rect x="17" width="2" rx="1" fill="currentColor" y="6" height="2" class=""></rect></svg></button><!--astro:end--></astro-island><a href="mailto:xpland.nguyen@gmail.com" class="whitespace-nowrap rounded-full bg-paper px-4 py-2 text-sm font-medium text-ink no-underline transition-transform hover:scale-[1.03]">Get in touch</a></div></div><ul class="flex justify-center gap-1 border-t border-white/10 px-2 py-1.5 md:hidden" aria-label="Sections"><li><a href="index.html#work" aria-current="page" class="block rounded-full px-3 py-1.5 text-[0.8125rem] no-underline bg-white/[0.08] text-chalk">Work</a></li><li><a href="leadership.html" class="block rounded-full px-3 py-1.5 text-[0.8125rem] no-underline text-fog">Leadership</a></li><li><a href="about.html" class="block rounded-full px-3 py-1.5 text-[0.8125rem] no-underline text-fog">About</a></li><li><a href="resume.html" class="block rounded-full px-3 py-1.5 text-[0.8125rem] no-underline text-fog">Résumé</a></li></ul></nav></header><main id="main" tabindex="-1"><article><astro-island uid="ZyPynV" prefix="r12" component-url="./assets/CaseHero.kr9WyhZ0.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;story&quot;:[0,{&quot;hero1&quot;:[0,&quot;Calm products for money, data and trust.&quot;],&quot;hero2&quot;:[0,&quot;Every claim comes with its receipt.&quot;],&quot;mapLine&quot;:[0,&quot;Designed from Ho Chi Minh City. Shipped for teams in Melbourne and London.&quot;],&quot;workTitle&quot;:[0,&quot;Eight cases. Each one proves something different.&quot;],&quot;habitsTitle&quot;:[0,&quot;I raise the bar by making it easier to meet.&quot;],&quot;close1&quot;:[0,&quot;Hiring a lead for something people have to trust?&quot;],&quot;close2&quot;:[0,&quot;Every claim comes with its receipt.&quot;],&quot;foldLabel&quot;:[0,&quot;Read the full case&quot;],&quot;nextLabel&quot;:[0,&quot;Next&quot;],&quot;id&quot;:[0,&quot;A&quot;],&quot;name&quot;:[0,&quot;The observation deck&quot;],&quot;shape&quot;:[0,&quot;pane&quot;],&quot;backdrop&quot;:[0,&quot;deck&quot;],&quot;heroEyebrow&quot;:[0,&quot;Minh Nguyen · Lead Product Designer&quot;],&quot;heroSub&quot;:[0,&quot;I lead design where a wrong number costs real money: a consumer stablecoin wallet built from the first screen for phone and desktop, credit workflows and merchant onboarding at NAB, and an AI-assisted regulatory tool.&quot;],&quot;reveal&quot;:[0,&quot;From up here the hand-offs show. The same details, copied from a spreadsheet into an email, then typed again. I design the system so they are typed once.&quot;],&quot;split&quot;:[1,[[0,&quot;Seen from&quot;],[0,&quot;above.&quot;]]],&quot;objectCaption&quot;:[0,&quot;Three tools and one email thread, mapped before a single screen. What the platform can check now runs in the background. When a request fails, the screen says why.&quot;],&quot;caseHeroHint&quot;:[0,&quot;Behind glass&quot;],&quot;frameLabel&quot;:[0,&quot;OBSERVATION DECK&quot;]}],&quot;visual&quot;:[0,{&quot;kind&quot;:[0,&quot;img&quot;],&quot;src&quot;:[0,&quot;img/huma-desktop.webp&quot;],&quot;alt&quot;:[0,&quot;Huma wallet donation dashboard on desktop&quot;],&quot;caption&quot;:[0,&quot;Prototype screen with placeholder data.&quot;]}],&quot;eyebrow&quot;:[0,&quot;Unera · Dec 2025 – now · 8 min read&quot;],&quot;title&quot;:[0,&quot;One wallet for giving, sending and earning, designed so people can see where every dollar went.&quot;],&quot;proves&quot;:[0,&quot;Consumer craft on mobile and desktop, and a design system I own.&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;CaseHero&quot;,&quot;value&quot;:true}" await-children><section data-stage="" data-t0="0" data-t1="1" data-pin="1" class="relative bg-night" style="height:280vh"><div class="sticky top-0 h-[100dvh] overflow-hidden"><div class="absolute inset-0 overflow-hidden"><div class="absolute inset-0 will-change-transform" style="transform:scale(1.16)"><div class="absolute inset-0"><div class="absolute inset-0 overflow-hidden " aria-hidden="true"><canvas class="absolute inset-0 h-full w-full"></canvas><div class="grain absolute inset-0"></div></div><div class="absolute inset-0 flex items-center justify-center px-5 pb-10 pt-24 md:px-8"><div class="frame frame-pane  w-[min(960px,92vw,calc((100dvh_-_12rem)*1.6))]"><div class="frame-glass"><img src="img/huma-desktop.webp" alt="Huma wallet donation dashboard on desktop" width="1200" height="750" loading="eager" decoding="async" class="block h-auto w-full"/></div><span class="frame-reflection" aria-hidden="true"></span><span class="frame-label" aria-hidden="true">OBSERVATION DECK</span></div></div></div></div><div aria-hidden="true" class="aperture-hole pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 will-change-[width,height]" style="border-radius:1.5vmin;box-shadow:0 0 0 300vmax hsl(201 100% 6%);width:34vmin;height:49.3vmin"><div class="aperture-edge absolute inset-0" style="border-radius:1.5vmin;opacity:1"></div></div><div class="absolute inset-0 overflow-y-auto" style="opacity:1;transform:none"><div class="case-copy mx-auto flex min-h-full max-w-6xl flex-col justify-end px-5 pb-20 pt-28 md:justify-center md:px-8"><p class="self-start rounded-lg bg-night/90 px-3 py-1 font-mono text-xs uppercase tracking-[0.16em] text-mist">Unera · Dec 2025 – now · 8 min read</p><h1 class="display on-scene mt-4 max-w-[18ch] text-[2.4rem] leading-[0.98] sm:text-6xl md:mt-6 lg:text-[5rem]">One wallet for giving, sending and earning, designed so people can see where every dollar went.</h1><p class="case-why on-scene mt-5 max-w-[44rem] text-base text-chalk md:mt-8 md:max-w-[30rem] md:text-lg"><span class="font-medium text-chalk">Why this case is here:</span> <!-- -->Consumer craft on mobile and desktop, and a design system I own.</p></div></div></div></div></section><!--astro:end--></astro-island><section class="mx-auto max-w-6xl px-5 py-24 md:px-8" aria-label="Case facts"><div class="grid gap-12 lg:grid-cols-[1fr_340px] lg:gap-16"><div><a href="index.html#work" class="inline-flex min-h-6 items-center font-mono text-xs uppercase tracking-[0.12em] text-fog no-underline hover:text-chalk">← All work</a><p class="display mt-8 max-w-[22ch] text-3xl leading-[1.1] md:text-5xl">Responsive web app in build.</p><p class="mt-6 max-w-[48ch] text-mist">Seven scenes follow, then the full written case. Every number carries a stamp that says how I know it.</p></div><div class="paper self-start px-5 pt-5" role="group" aria-label="Case facts receipt"><div class="text-center text-xs tracking-[0.18em]">CASE FACTS</div><hr><dl class="space-y-2.5"><div><dt class="meta text-xs tracking-[0.1em]">ROLE</dt><dd>Lead Product Designer (contract)</dd></div><div><dt class="meta text-xs tracking-[0.1em]">TEAM</dt><dd>Product owner, QA, 2 back-end and 2 front-end engineers, 1 part-time junior designer</dd></div><div><dt class="meta text-xs tracking-[0.1em]">STATUS</dt><dd>Responsive web app in build</dd></div></dl><hr><ul class="space-y-3"><li><div class="row"><span>Spec items met after audit and fixes</span></div><div class="mt-1 flex flex-wrap items-center gap-2"><span class="tabular text-base font-semibold">99 / 99</span><span class="stamp" data-k="record" title="A count of real artefacts. Automated checks on the donation flow">Record</span></div><div class="meta text-xs">Automated checks on the donation flow</div></li><li><div class="row"><span>Design systems built and maintained</span></div><div class="mt-1 flex flex-wrap items-center gap-2"><span class="tabular text-base font-semibold">2</span><span class="stamp" data-k="record" title="A count of real artefacts. Huma (consumer) and the issuer portal">Record</span></div><div class="meta text-xs">Huma (consumer) and the issuer portal</div></li><li><div class="row"><span>Hands-on time to give with crypto</span></div><div class="mt-1 flex flex-wrap items-center gap-2"><span class="tabular text-base font-semibold">~14.6 s</span><span class="stamp" data-k="modelled" title="Calculated from stated assumptions. Keystroke-level model; excludes reading and network waits">Modelled</span></div><div class="meta text-xs">Keystroke-level model; excludes reading and network waits</div></li><li><div class="row"><span>First-time crypto users finishing unaided</span></div><div class="mt-1 flex flex-wrap items-center gap-2"><span class="tabular text-base font-semibold">4 of 5</span><span class="stamp" data-k="target" title="A goal set before launch, not a result. Pass bar for the five-person test">Target</span></div><div class="meta text-xs">Pass bar for the five-person test</div></li></ul></div></div></section><script>(function(){let e=(e,t,n)=>{let r=async()=>{await(await e())()},i=typeof t.value==`object`?t.value:void 0,a={rootMargin:i==null?void 0:i.rootMargin},o=new IntersectionObserver(e=>{for(let t of e)if(t.isIntersecting){o.disconnect(),r();break}},a);for(let e of n.children)o.observe(e)};(self.Astro||(self.Astro={})).visible=e,window.dispatchEvent(new Event(`astro:visible`))})();</script><astro-island uid="ZILYkR" prefix="r18" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The problem</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">A wait that looks like a failure is the whole problem.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">A donor taps donate. The next minute is a blockchain confirming the transfer. Most wallets show a hash and a spinner. To a first-time user, the money has vanished.</p></div><div class="scene-in scene-in-2 min-w-0"><div class="compare grid gap-8 sm:grid-cols-2"><div><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">Most wallets</p><ul class="mt-4 space-y-4"><li class="compare-before text-lg leading-snug text-fog">A transaction hash</li><li class="compare-before text-lg leading-snug text-fog">A spinner</li><li class="compare-before text-lg leading-snug text-fog">A modal that traps you</li></ul></div><div><p class="font-mono text-xs uppercase tracking-[0.16em] text-champagne">Huma</p><ul class="mt-4 space-y-4"><li class="compare-after text-lg leading-snug text-chalk">“Your donation is on its way. Usually takes 2–5 minutes.”</li><li class="compare-after text-lg leading-snug text-chalk">Named stages: “Nothing more is needed from you.”</li><li class="compare-after text-lg leading-snug text-chalk">A pending pill, so you can leave the page</li></ul></div></div></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="o0Rrd" prefix="r27" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in lg:order-2"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The reframe</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">People commit after they’ve seen the cost, so the gates moved to the end.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">The first flows asked for a wallet and identity checks at the door. Now you browse, pick an amount, see the full cost, then commit. The fee sits on top, so the centre receives the full amount.</p></div><div class="scene-in scene-in-2 min-w-0 lg:order-1"><figure class="m-0"><div class="frame frame-pane  "><div class="frame-glass"><img src="img/wallet-03-donate-amount-fee-on-top-desktop.webp" alt="Donate amount screen showing the fee added on top so the centre receives the full amount" width="1200" height="750" loading="lazy" decoding="async" class="block h-auto w-full"></div><span class="frame-reflection" aria-hidden="true"></span><span class="frame-label" aria-hidden="true">OBSERVATION DECK</span></div><figcaption class="mt-4 font-mono text-[0.75rem] leading-relaxed text-fog">The amount comes before any wallet prompt. Placeholder data.</figcaption></figure></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="Z1Wsr8b" prefix="r28" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The design</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">One tracker replaced four waiting screens.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">Donate, send, swap and buy all wait on a network. One component now carries all of them, with designed states for running, delayed, failed and done.</p></div><div class="scene-in scene-in-2 min-w-0"><figure class="m-0"><div class="frame frame-pane  "><div class="frame-glass"><div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/wallet-tracker.webp" width="780" height="760" aria-label="Donation tracker running: the stages tick off, a bar counts network checks, and the lines below say the money is safe and nothing is needed"><source src="anim/wallet-tracker.mp4" type="video/mp4"></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div></div><span class="frame-reflection" aria-hidden="true"></span><span class="frame-label" aria-hidden="true">OBSERVATION DECK</span></div><figcaption class="mt-4 font-mono text-[0.75rem] leading-relaxed text-fog">Recorded from the prototype. Placeholder data and neutral labels.</figcaption></figure></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="kpdKz" prefix="r29" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in lg:order-2"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">Phone and desktop</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">One design, two sets of rules.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">Responsive web, designed mobile-first and checked at six phone widths from 360 to 414 px, plus tablets. Twenty-three batches of mobile feedback became a written mobile rule set. A native app is planned, not built.</p></div><div class="scene-in scene-in-2 min-w-0 lg:order-1"><figure class="m-0 mx-auto w-[min(300px,80vw)]"><div class="frame frame-pane  "><div class="frame-glass"><img src="img/huma-mobile.webp" alt="Donation review on a phone: the centre, the payment method and the amount in one column, with the menu folded away and the notification bell in reach" width="390" height="844" loading="lazy" decoding="async" class="block h-auto w-full"></div><span class="frame-reflection" aria-hidden="true"></span><span class="frame-label" aria-hidden="true">OBSERVATION DECK</span></div><figcaption class="mt-4 font-mono text-[0.75rem] leading-relaxed text-fog">The donation review on a phone. Prototype screen with placeholder data.</figcaption></figure></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="EvDGV" prefix="r13" component-url="./assets/WorldBeats.gWLJPq9y.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;eyebrow&quot;:[0,&quot;The wait, as a place&quot;],&quot;beats&quot;:[1,[[0,{&quot;title&quot;:[0,&quot;You give. The wait begins.&quot;],&quot;body&quot;:[0,&quot;A donation leaves your wallet. Most apps show a hash and a spinner here, and to someone new to crypto the money has vanished.&quot;]}],[0,{&quot;title&quot;:[0,&quot;The network double-checks, and the screen says so.&quot;],&quot;body&quot;:[0,&quot;Twelve checks light one by one. The line under them says nothing is needed from you, so slow never reads as broken.&quot;]}],[0,{&quot;title&quot;:[0,&quot;The centre lights up, and you get a receipt.&quot;],&quot;body&quot;:[0,&quot;The money reaches the centre and the receipt says where it went. The moving light is an illustration, not data.&quot;]}]]],&quot;fallback&quot;:[0,{&quot;src&quot;:[0,&quot;img/unera/tracker-still.webp&quot;],&quot;alt&quot;:[0,&quot;Night view of a donation drawn as a light travelling from a wallet past twelve lit network checks to a community centre&quot;]}]}" ssr client="load" opts="{&quot;name&quot;:&quot;WorldBeats&quot;,&quot;value&quot;:true}" await-children><section data-stage="" data-t0="2" data-t1="3" data-pin="1" class="relative world-beats" style="height:390vh"><div class="sticky top-0 h-[100dvh] overflow-hidden"><div class="relative h-full"><div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-night/90 via-night/30 to-transparent lg:bg-gradient-to-r lg:from-night/85 lg:via-night/35 lg:to-transparent"></div><div class="absolute inset-0 flex items-start justify-center px-5 pt-28 lg:items-center lg:justify-end lg:px-12 lg:pt-0"><img src="img/unera/tracker-still.webp" alt="Night view of a donation drawn as a light travelling from a wallet past twelve lit network checks to a community centre" loading="lazy" decoding="async" class="block h-auto w-[min(640px,90vw)] rounded-[18px] bg-paper p-2"/></div><div class="relative mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-16 md:px-8 lg:justify-center lg:pb-0"><div class="lg:max-w-[30rem]"><p class="w-fit rounded-lg bg-night/90 px-3 py-1 font-mono text-xs uppercase tracking-[0.16em] text-mist">The wait, as a place</p><div class="relative mt-6 h-[15rem] sm:h-[16rem] lg:h-[20rem]"><div class="absolute inset-x-0 bottom-0 lg:bottom-auto" style="opacity:1;transform:none"><h3 class="display on-scene text-[2.1rem] leading-[1.02] text-chalk sm:text-5xl lg:text-[3.3rem]">You give. The wait begins.</h3><p class="on-scene mt-5 max-w-[34rem] text-base leading-relaxed text-mist md:text-lg">A donation leaves your wallet. Most apps show a hash and a spinner here, and to someone new to crypto the money has vanished.</p></div><div class="absolute inset-x-0 bottom-0 lg:bottom-auto" style="opacity:0;transform:translateY(18px)"><h3 class="display on-scene text-[2.1rem] leading-[1.02] text-chalk sm:text-5xl lg:text-[3.3rem]">The network double-checks, and the screen says so.</h3><p class="on-scene mt-5 max-w-[34rem] text-base leading-relaxed text-mist md:text-lg">Twelve checks light one by one. The line under them says nothing is needed from you, so slow never reads as broken.</p></div><div class="absolute inset-x-0 bottom-0 lg:bottom-auto" style="opacity:0;transform:translateY(18px)"><h3 class="display on-scene text-[2.1rem] leading-[1.02] text-chalk sm:text-5xl lg:text-[3.3rem]">The centre lights up, and you get a receipt.</h3><p class="on-scene mt-5 max-w-[34rem] text-base leading-relaxed text-mist md:text-lg">The money reaches the centre and the receipt says where it went. The moving light is an illustration, not data.</p></div></div><div class="mt-8 flex max-w-[16rem] gap-2" aria-hidden="true"><span class="relative h-[2px] flex-1 overflow-hidden rounded-full bg-white/15"><span class="absolute inset-y-0 left-0 bg-champagne" style="width:0%"></span></span><span class="relative h-[2px] flex-1 overflow-hidden rounded-full bg-white/15"><span class="absolute inset-y-0 left-0 bg-champagne" style="width:0%"></span></span><span class="relative h-[2px] flex-1 overflow-hidden rounded-full bg-white/15"><span class="absolute inset-y-0 left-0 bg-champagne" style="width:0%"></span></span></div></div></div><ol class="sr-only"><li>You give. The wait begins.<!-- --> A donation leaves your wallet. Most apps show a hash and a spinner here, and to someone new to crypto the money has vanished.</li><li>The network double-checks, and the screen says so.<!-- --> Twelve checks light one by one. The line under them says nothing is needed from you, so slow never reads as broken.</li><li>The centre lights up, and you get a receipt.<!-- --> The money reaches the centre and the receipt says where it went. The moving light is an illustration, not data.</li></ol></div></div></section><!--astro:end--></astro-island><astro-island uid="Z1SktlT" prefix="r22" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1.15fr]"><div class="scene-in lg:order-2"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">The proof</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">I checked the work against the spec, not against my memory.</h2><p class="mt-7 max-w-[40rem] text-lg leading-relaxed text-mist">These are build checks, not user results. Usability testing with first-time crypto users is next, and the tracker is the first thing I’d test.</p></div><div class="scene-in scene-in-2 min-w-0 lg:order-1"><dl class="grid gap-x-10 gap-y-10 sm:grid-cols-2"><div class="stat border-t border-rule pt-5"><dd class="tabular display text-[2.6rem] leading-none text-chalk md:text-6xl">45 · 37 · 16</dd><dt class="mt-3 text-mist">spec items met, partly met, missing at baseline</dt><dd class="mt-3 flex flex-wrap items-center gap-2 text-sm text-fog"><span class="stamp" data-k="record" title="A count of real artefacts. Line-by-line audit">Record</span><span class="font-mono text-[0.75rem]">Line-by-line audit</span></dd></div><div class="stat border-t border-rule pt-5"><dd class="tabular display text-[2.6rem] leading-none text-chalk md:text-6xl">99 / 99</dd><dt class="mt-3 text-mist">automated checks passing after fixes</dt><dd class="mt-3 flex flex-wrap items-center gap-2 text-sm text-fog"><span class="stamp" data-k="record" title="A count of real artefacts. Build checks">Record</span><span class="font-mono text-[0.75rem]">Build checks</span></dd></div><div class="stat border-t border-rule pt-5"><dd class="tabular display text-[2.6rem] leading-none text-chalk md:text-6xl">14</dd><dt class="mt-3 text-mist">error messages, word for word from the spec</dt><dd class="mt-3 flex flex-wrap items-center gap-2 text-sm text-fog"><span class="stamp" data-k="record" title="A count of real artefacts. Copy audit">Record</span><span class="font-mono text-[0.75rem]">Copy audit</span></dd></div><div class="stat border-t border-rule pt-5"><dd class="tabular display text-[2.6rem] leading-none text-chalk md:text-6xl">10</dd><dt class="mt-3 text-mist">open questions left visible, not invented</dt><dd class="mt-3 flex flex-wrap items-center gap-2 text-sm text-fog"><span class="stamp" data-k="record" title="A count of real artefacts. In the prototype">Record</span><span class="font-mono text-[0.75rem]">In the prototype</span></dd></div></dl></div></div></astro-slot></section><!--astro:end--></astro-island><astro-island uid="ZDOoDA" prefix="r23" component-url="./assets/SceneTick.BC7HGm2l.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{&quot;className&quot;:[0,&quot;relative&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;SceneTick&quot;,&quot;value&quot;:true}" await-children><section class="scene relative"><astro-slot><div class="mx-auto grid min-h-[100dvh] max-w-6xl items-center gap-12 px-5 py-24 md:px-8 lg:gap-16 lg:grid-cols-[1fr_1fr]"><div class="scene-in"><p class="font-mono text-xs uppercase tracking-[0.16em] text-fog">Leading the work</p><h2 class="display mt-5 text-[2.4rem] leading-[1] sm:text-5xl lg:text-[3.6rem]">The standard is written down, so a review is about the rule, not my taste.</h2></div><div class="scene-in scene-in-2 min-w-0"><ul class="led space-y-7"><li class="led-item text-lg leading-relaxed text-mist">Hired for the interface, later promoted to lead. Audits, alignment sessions and written standards came one at a time, each earning the next.</li><li class="led-item text-lg leading-relaxed text-mist">One design manual: colour rules, flow anatomy, the tracker pattern, writing rules and a pre-change checklist.</li><li class="led-item text-lg leading-relaxed text-mist">Turned 23 batches of mobile feedback into a written rule set, so the same comment doesn’t come back twice.</li><li class="led-item text-lg leading-relaxed text-mist">Split the work by lane: I keep the flows and the system; a part-time junior designer owns the error and edge states, reviewed against rules I wrote.</li></ul></div></div></astro-slot></section><!--astro:end--></astro-island><div class="mx-auto mt-12 max-w-6xl px-5 md:px-8"><details class="case-fold mt-16 border-t border-rule"><summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-8"><span class="display text-3xl md:text-5xl">Read the full case</span><span class="fold-icon glass grid h-11 w-11 shrink-0 place-items-center rounded-full" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12" class="fold-plus"></path></svg></span></summary><div class="prose-case pb-8"><div class="prose-case"><p><strong>In one line:</strong> Donors don&#39;t trust that their money arrives, and in crypto a normal wait looks like a failure. Huma is a wallet where people hold a US-dollar stablecoin, send it, and donate to community centres, with a receipt for where the money went. I lead its design on phone and desktop, own its design system, and set the rules the team builds by.</p>
+<div class="table-wrap"><table>
+
+<tbody><tr>
+<td><strong>Role</strong></td>
+<td>Lead Product Designer (contract), promoted from UI/UX designer. I own the design direction, the design system and the review standard. A part-time junior designer now works with me on error and edge states.</td>
+</tr>
+<tr>
+<td><strong>Team</strong></td>
+<td>Product owner, QA and spec owner, 2 back-end and 2 front-end engineers</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>Mobile-responsive web app. A native app is planned, not built.</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>In build. No live usage data yet, so this case shows decisions, not outcomes.</td>
+</tr>
+</tbody></table></div>
+<h2>Thirty-second version</h2>
+<ul>
+<li><strong>Problem.</strong> Donors don&#39;t trust that their money arrives, and crypto makes it worse: blockchain waits look like failures. The client wanted one wallet for giving, sending and earning points, for people with no crypto knowledge.</li>
+<li><strong>What I did.</strong> Designed the consumer app across 43 pages and built the design system behind it. Made one transaction tracker for every money flow, so a wait reads as progress, not a problem. Audited every screen against the product spec instead of guessing, and kept open questions visible instead of inventing answers. I was hired for the interface; I brought the UX in one piece of evidence at a time, until the work needed a second designer.</li>
+<li><strong>Where it stands.</strong> The baseline audit found 45 spec items met, 37 partly met and 16 missing. After my fixes, all 99 automated checks passed. Those are build checks, not user results. Before launch I set pass bars, modelled a crypto donation at about 15 seconds of hands-on time, and wrote a five-person test to replace the model.</li>
+</ul>
+<h3>How the work ran</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What happened</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Discover</td>
+<td>The client&#39;s problem statements and the product spec. Donors want proof of where money goes; centres want predictable funding.</td>
+</tr>
+<tr>
+<td>Reframe</td>
+<td>From &quot;make crypto look friendly&quot; to &quot;always know where your money is and what happens next&quot;. Team huddle, 20 June 2026: gate wallet and identity checks late, not at the door.</td>
+</tr>
+<tr>
+<td>Quality bar</td>
+<td>Every screen checked against the spec line by line; every state designed before hand-off; error copy word for word from the spec.</td>
+</tr>
+<tr>
+<td>Design</td>
+<td>42 pages consolidated into one set on 22 August; Points page added 18 September. Design system with tokens and guideline cards built alongside.</td>
+</tr>
+<tr>
+<td>Validate</td>
+<td>Spec audit: 45 / 37 / 16 at baseline, then 99 of 99 checks passing. 23 batches of mobile feedback worked through 1 to 5 September.</td>
+</tr>
+<tr>
+<td>Ship or measure</td>
+<td>Front-end building from the prototype. Not launched yet.</td>
+</tr>
+</tbody></table></div>
+<figure>
+  <img src="img/wallet-04-donation-waiting-tracker-desktop.webp" alt="Donation tracker: three named stages, an elapsed timer, and a note that the user can leave the page" width="1200" height="750" loading="lazy" />
+  <figcaption>The shared tracker. Prototype screen with placeholder data and neutral labels.</figcaption>
+</figure>
+
+<h2>A wait that looks like a failure is the whole problem.</h2>
+<p>A donor picks a community centre, enters fifty dollars and taps donate. If they pay with crypto, the next minute is a blockchain confirming the transfer. Most wallets show a hash and a spinner. To someone who has never used crypto, that looks like their money vanished.</p>
+<p>The model depends on people trusting a product built on a technology they don&#39;t understand. So the design question was not &quot;how do we make crypto look friendly&quot;. It was <strong>&quot;how does someone always know where their money is, what happens next, and whether they need to do anything?&quot;</strong></p>
+<h2>One tracker replaced four waiting screens.</h2>
+<p>Donate, send, swap and buy all wait on a network. Early prototypes had a different waiting screen for each, and one was a modal that trapped people. One tracker replaced them:</p>
+<ul>
+<li>A plain headline and a time estimate instead of a transaction hash: <em>&quot;Your donation is on its way. Usually takes 2–5 minutes.&quot;</em></li>
+<li>Named stages, each saying whether the person needs to act. Most say <em>&quot;Nothing more is needed from you.&quot;</em></li>
+<li>Designed states for running, delayed, failed and done. A delay gets its own message, so slow never reads as broken.</li>
+<li>A pending pill in the navigation and a notification, so people can leave the page.</li>
+</ul>
+<figure>
+  <div class="vid"><video data-loop muted loop playsinline preload="none" poster="anim/wallet-tracker.webp" width="780" height="760" aria-label="Donation tracker: wallet, network and centre icons connected by a line; the stages tick off, a progress bar counts network checks, and the reassurance lines say the money is safe and nothing is needed" style="max-width:520px"><source src="anim/wallet-tracker.mp4" type="video/mp4" /></video><button type="button" class="vid-toggle" data-vid-toggle aria-label="Play the recording">Play</button></div>
+  <figcaption>The tracker running, recorded from the prototype. "Network is double-checking" replaces "12 confirmations". Placeholder data.</figcaption>
+</figure>
+
+<h2>People commit after they&#39;ve seen the cost, so the gates moved to the end.</h2>
+<p>The first flows asked people to connect a wallet and pass identity checks before they could see anything. We moved those gates to the last responsible step: browse, pick an amount, see the full cost, then commit.</p>
+<figure>
+  <img src="img/wallet-03-donate-amount-fee-on-top-desktop.webp" alt="Donate amount screen showing the fee added on top so the centre receives the full amount" width="1200" height="750" loading="lazy" />
+  <figcaption>The amount comes before any wallet prompt. The fee sits on top, so the centre receives the full amount.</figcaption>
+</figure>
+
+<p>An unexpected wallet pop-up feels like a scam, so every review screen says how many confirmations to expect, or that there are none.</p>
+<figure>
+  <img src="img/wallet-05-donate-review-mobile.webp" alt="Mobile donation review saying no wallet confirmations are needed and that donations are final" width="390" height="1514" loading="lazy" style="max-width:320px" />
+  <figcaption>Mobile review: the cost, the points, "no wallet confirmations needed", and the fact that donations are final.</figcaption>
+</figure>
+
+<figure>
+  <img src="img/wallet-06-send-review-mobile.webp" alt="Mobile send review: sender, recipient, network, amount and network fee, a note that the user confirms once in the wallet, and a warning that a send cannot be undone" width="390" height="1171" loading="lazy" style="max-width:320px" />
+  <figcaption>The same rule on a send: "You'll confirm once in your wallet", and a plain warning that a send cannot be undone. Placeholder data.</figcaption>
+</figure>
+
+<p>Phase 1 takes cards only. The other methods stay visible and say <em>Coming soon</em>, so the roadmap is honest and nobody taps into a dead end.</p>
+<h2>I checked the work against the spec, not against my memory.</h2>
+<p>The spec owner&#39;s feedback kept turning up gaps, so I stopped reviewing screens by eye and audited the whole donation flow against the requirements, line by line.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>What I checked</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Spec items at baseline</td>
+<td>45 met · 37 partly met · 16 missing</td>
+</tr>
+<tr>
+<td>Error messages</td>
+<td>All 14 from the spec, used word for word</td>
+</tr>
+<tr>
+<td>Automated checks after fixes</td>
+<td>99 of 99 passed</td>
+</tr>
+<tr>
+<td>Open questions</td>
+<td>10, left visible in the prototype as open, not invented</td>
+</tr>
+</tbody></table></div>
+<p>The last line matters most. Where the spec was silent, I marked the gap and asked, instead of filling it with a confident guess the engineers would then build.</p>
+<h2>Mobile and desktop are one design with two sets of rules.</h2>
+<p>The app is responsive web, designed mobile-first and checked on the product owner&#39;s device list: 360, 375, 390, 393, 402 and 414 px wide, plus tablets. The 23 batches of mobile feedback were mostly about density and fit, so the repeat issues became a written mobile rule set. A one-screen fit pass at 1280 × 720 took desktop overflow from 380–1,500 px down to mostly zero. An automated check of the Points pages passed at all 154 page and screen-size combinations. Two gaps are still open: contrast has not been re-measured, and screen-reader testing has not been done.</p>
+<p><strong>Planned, not built.</strong> I also drafted the plan for a native app: navigation model, MVP scope, where iOS and Android conventions should differ from the web, and accessibility requirements. The client has not started building it.</p>
+<h2>I was hired to make screens. Evidence made the case for UX.</h2>
+<p>The client brought me in as a UI-focused designer: the brief was the interface. Nobody had asked for research, audits or a states standard, and I didn&#39;t ask for permission to start them. I added one practice at a time, and each one earned the next because it caught something the team would otherwise have built.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>When (2026)</th>
+<th>What I brought in</th>
+<th>What it showed</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>9 May</td>
+<td>A roadmap audit: every planned feature mapped to the pages that existed</td>
+<td>Each feature marked done, partial or missing, so design started from the plan, not from requests</td>
+</tr>
+<tr>
+<td>19–20 June</td>
+<td>A 90-minute design alignment session with product, engineering and QA, decisions keyed to the recording</td>
+<td>Buy, swap, gating and history rules agreed once, in writing, and traceable to who said what</td>
+</tr>
+<tr>
+<td>June</td>
+<td>A scope and copy audit of the issuer portal</td>
+<td>5 features taken out of release one; 3 trust claims removed</td>
+</tr>
+<tr>
+<td>24 July</td>
+<td>Review calls transcribed and traced item by item</td>
+<td>Spoken feedback that never reached the notes was found and done</td>
+</tr>
+<tr>
+<td>August</td>
+<td>The donation flow audited against the spec, line by line</td>
+<td>45 met, 37 partly met, 16 missing at baseline; 99 of 99 checks after fixes</td>
+</tr>
+<tr>
+<td>31 August</td>
+<td>Error and edge states for every flow, with a switcher QA can use</td>
+<td>State switchers added to 14 more pages</td>
+</tr>
+<tr>
+<td>1–5 September</td>
+<td>23 batches of mobile feedback turned into written rules</td>
+<td>The same comment stopped coming back</td>
+</tr>
+<tr>
+<td>4 October</td>
+<td>A states rule for the operator console, before its first module</td>
+<td>No module reaches engineering without its bad days</td>
+</tr>
+<tr>
+<td>After that</td>
+<td>A part-time junior designer joined for error and edge states</td>
+<td>The states work now runs in parallel with mine, to written rules</td>
+</tr>
+</tbody></table></div>
+<p>Every row is a dated record in the project files, not a result. The test with real users is the next row, and it&#39;s written below.</p>
+<h2>I own the flows and the rules. The junior designer owns the bad days inside them.</h2>
+<p>Forty-three pages, each with its own ways to go wrong, is more than one person can design well alongside the flows. So when the junior designer joined, I split the work into two lanes. I keep the flows, the patterns and the design system. The junior designer takes the error and edge states, inside rules I wrote first.</p>
+<figure class="lanes">
+  <div class="lane">
+    <p class="lane-h"><span>My lane</span> The flow, the patterns, the system</p>
+    <ul>
+      <li><img src="img/split/huma-amount.webp" alt="Donate amount step: payment methods with Coming soon labels and a live summary with the fee on top" width="640" height="480" loading="lazy" /><span>Amount first, fee on top, full cost before any prompt</span></li>
+      <li><img src="img/split/huma-tracker.webp" alt="Shared tracker: wallet, network and centre stages with a plain headline and time estimate" width="640" height="480" loading="lazy" /><span>The shared tracker and its stage names</span></li>
+      <li><img src="img/split/huma-review.webp" alt="Mobile review: no wallet confirmations needed, and donations are final" width="640" height="480" loading="lazy" /><span>Review: wallet prompts counted up front</span></li>
+    </ul>
+  </div>
+  <p class="lane-hand">I hand over the flow, the spec's list of failure cases and the written state rules. Every state comes back to me for review before engineering sees it.</p>
+  <div class="lane lane-b">
+    <p class="lane-h"><span>Junior designer's lane</span> The bad days, inside those rules</p>
+    <ul>
+      <li><img src="img/split/huma-insufficient.webp" alt="Mobile donate step with an inline error: you do not have enough USDC for this donation" width="640" height="480" loading="lazy" /><span>Not enough USDC: the error sits on the field</span></li>
+      <li><img src="img/split/huma-unavailable.webp" alt="Centre directory unavailable: public totals stay on screen above a warning with a Retry button" width="640" height="480" loading="lazy" /><span>Directory down: the totals stay, one Retry</span></li>
+      <li><img src="img/split/huma-rig.webp" alt="Prototype state switcher listing user states, donation outcomes and blockers" width="640" height="480" loading="lazy" /><span>The switcher QA uses: 4 user states, 8 outcomes, 7 blockers</span></li>
+    </ul>
+  </div>
+  <figcaption>Real prototype screens, anonymised. Placeholder figures.</figcaption>
+</figure>
+
+<p>The rules both lanes work to are in the design manual, so a review checks the rule and not my taste:</p>
+<ul>
+<li>Every failure case the spec names gets its own state, marked as blocking or not. A blocking state disables the main button.</li>
+<li>Failure, waiting and success are different components. A failed donation never borrows the success badge.</li>
+<li>Every sentence says what is happening to the money and whether the person needs to do anything.</li>
+</ul>
+<h2>Decision log</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Options</th>
+<th>What I chose and why</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Waiting screens</td>
+<td>One per flow / one shared tracker</td>
+<td><strong>Shared tracker.</strong> One mental model for users, one component for engineering.</td>
+</tr>
+<tr>
+<td>Where to gate wallet and identity checks</td>
+<td>At the door / near the final step</td>
+<td><strong>Near the final step.</strong> A teammate proposed it in the 20 June huddle and the team agreed. People commit after they&#39;ve seen the cost, not before.</td>
+</tr>
+<tr>
+<td>Unsupported payment methods</td>
+<td>Hide them / show as Coming soon</td>
+<td><strong>Show them.</strong> Honest about the roadmap, no dead ends.</td>
+</tr>
+<tr>
+<td>Donation steps</td>
+<td>4 steps / 5 steps</td>
+<td><strong>5 steps.</strong> I merged them to 4, then went back to 5 so Donate matches Buy. Consistency beat a shorter count.</td>
+</tr>
+<tr>
+<td>Balance hero on the home screen</td>
+<td>Keep / remove</td>
+<td><strong>Removed after one day.</strong> The feedback that prompted it was about the issuer portal, not the wallet. I caught it in the next review.</td>
+</tr>
+<tr>
+<td>Points feature copy</td>
+<td>Promise future perks / describe only what exists</td>
+<td><strong>Only what exists.</strong> I cut multiplier and discount claims the spec didn&#39;t support.</td>
+</tr>
+<tr>
+<td>Who designs the failure states</td>
+<td>Me, after the flows / a second designer, in parallel, to written rules</td>
+<td><strong>In parallel.</strong> The states were designed alongside the flows instead of after them, and the written rules kept both lanes in one voice.</td>
+</tr>
+</tbody></table></div>
+<h2>The design system separates brand colour from money colour.</h2>
+<p>Huma runs on a design system I built and maintain: 11 components, about 140 tokens across 4 token files, and 22 guideline cards, with written rules for when a pattern becomes a component. Its most useful rule is small: brand colour is for identity, money colour is for amounts and states, and money colour never decorates. It stops a balance looking like a promotion.</p>
+<h2>How I led</h2>
+<ul>
+<li><strong>Wrote the standard down.</strong> Colour rules, flow anatomy, the tracker pattern, writing rules and a pre-change checklist live in one design manual. My AI tools and I both work from it, so a review is about the rule, not my taste.</li>
+<li><strong>Turned feedback into rules.</strong> Repeat comments from 23 batches of mobile feedback became a written rule set, so the same comment doesn&#39;t come back twice.</li>
+<li><strong>Shared the work with a second designer.</strong> As the product grew, a part-time junior designer joined to cover error and edge states. I split the work by lane, set the states standard they work to, and review their work against it.</li>
+<li><strong>Kept the copy honest.</strong> AI helps me draft fast, so I added a writing check to the build that flags inflated or robotic phrasing before anything ships.</li>
+</ul>
+<h2>Before launch: a bar, a model, and the test that replaces the model.</h2>
+<p>Nothing is live, so there are no results to show. What I can do before launch is set the bar, model the main task, and write the test that will replace the model with real data.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Bar</th>
+<th>Receipt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hands-on time to give 50 USDC from a centre&#39;s page, up to the wallet signature</td>
+<td>About 14.6 s: 5 clicks, 2 keystrokes</td>
+<td><span class="stamp" data-k="modelled">Modelled</span></td>
+</tr>
+<tr>
+<td>First-time crypto users who finish a card donation unaided</td>
+<td>4 of 5</td>
+<td><span class="stamp" data-k="target">Target</span></td>
+</tr>
+<tr>
+<td>Testers who can say, during the wait, whether they need to do anything</td>
+<td>4 of 5</td>
+<td><span class="stamp" data-k="target">Target</span></td>
+</tr>
+<tr>
+<td>Testers who leave the page mid-wait and find their donation again</td>
+<td>4 of 5</td>
+<td><span class="stamp" data-k="target">Target</span></td>
+</tr>
+<tr>
+<td>System Usability Scale across the session</td>
+<td>70 or higher</td>
+<td><span class="stamp" data-k="target">Target</span></td>
+</tr>
+</tbody></table></div>
+<p><strong>Read these carefully.</strong> The model is a keystroke-level model with standard times: 1.1 s to point, 0.2 s to click, 0.28 s per keystroke, 0.4 s to move a hand between mouse and keyboard, and 1.35 s to decide before each step. It leaves out reading, network waits and the wallet app, so real times will be longer. It is there to compare designs, not to predict a result. The targets are mine and still need the product owner&#39;s agreement.</p>
+<details>
+<summary>The five-person test script</summary>
+
+<div class="table-wrap"><table>
+
+<tbody><tr>
+<td><strong>Who</strong></td>
+<td>Five people who gave to a charity online in the past year. At least three have never used a crypto wallet.</td>
+</tr>
+<tr>
+<td><strong>Setup</strong></td>
+<td>Moderated, 40 minutes, prototype with a test wallet. Think aloud.</td>
+</tr>
+<tr>
+<td><strong>Task 1</strong></td>
+<td>Give $50 by card to a centre you&#39;d like to support. <em>Measure:</em> finished unaided, time on task.</td>
+</tr>
+<tr>
+<td><strong>Task 2</strong></td>
+<td>Give 20 USDC. While it confirms, tell me what is happening. <em>Measure:</em> can they say whether they need to act?</td>
+</tr>
+<tr>
+<td><strong>Task 3</strong></td>
+<td>Leave the page, come back and check it arrived. <em>Measure:</em> do they find it through the pending pill or the bell?</td>
+</tr>
+<tr>
+<td><strong>Task 4</strong></td>
+<td>Find your receipt and tell me where the money went. <em>Measure:</em> answer checked against the receipt.</td>
+</tr>
+<tr>
+<td><strong>After</strong></td>
+<td>SUS questionnaire, then &quot;What would make you give again?&quot;</td>
+</tr>
+<tr>
+<td><strong>If a bar is missed</strong></td>
+<td>Change the design, then retest with five new people. The model is replaced by these results.</td>
+</tr>
+</tbody></table></div>
+</details>
+
+<h2>What I&#39;ll measure when it&#39;s live</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Visitors who become donors</td>
+<td>The client&#39;s own adoption measure; funnel analytics by payment method</td>
+</tr>
+<tr>
+<td>Support tickets about &quot;where is my money&quot;</td>
+<td>Count per 1,000 transactions, before and after the tracker</td>
+</tr>
+<tr>
+<td>People who leave the page during a wait and come back</td>
+<td>Pending-pill and notification click-through</td>
+</tr>
+<tr>
+<td>Donors who give again within 90 days</td>
+<td>Retention, the client&#39;s second adoption measure</td>
+</tr>
+</tbody></table></div>
+<h2>What I&#39;d do differently</h2>
+<p>I reversed some decisions within a day or two: the balance hero, the number of donate steps (five, then four, then five again), a separate portfolio page. Each reversal was right, but together they cost the engineers time. Most came from feedback meant for a different product, or from me acting on a comment before checking which screen it was about. I now confirm the scope of every piece of feedback in the review itself, before I change anything.</p>
+<p>The other gap is research. Everything here was checked against the spec and the team&#39;s judgement, not against real users. Moderated sessions with first-time crypto users are next, and the tracker is the first thing I&#39;d test.</p>
+<hr>
+<p><em>Prototype screens and recordings with placeholder figures and neutral labels. Unera and Huma are named with the client&#39;s written approval. No user data, partner names or fees are shown.</em></p>
+</div></div></details></div><nav aria-label="Next case" class="mx-auto mt-32 max-w-6xl px-5 md:px-8"><a href="single-large-exposure.html" class="group block border-t border-rule pt-10 no-underline"><span class="font-mono text-xs uppercase tracking-[0.12em] text-fog">Next · Single Large Exposure · password</span><span class="display mt-4 block max-w-[24ch] text-4xl transition-colors group-hover:text-white md:text-6xl">Bankers said SLE stood for Slow, Long, Exhausting. I threw away my first design, and the second is live.</span></a></nav></article></main><astro-island uid="1dAqa4" prefix="r17" component-url="./assets/Chat.BzV9p4aY.js" component-export="default" renderer-url="./assets/client.DKhQzRHo.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;Chat&quot;,&quot;value&quot;:true}" await-children><button type="button" class="chat-launcher" aria-expanded="false" aria-controls="chat-panel"><span class="chat-dot" aria-hidden="true"></span>Ask about Minh</button><section id="chat-panel" role="dialog" aria-modal="false" aria-labelledby="chat-title" class="chat-panel" hidden=""><div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3"><div><h2 id="chat-title" class="text-[0.9375rem] font-medium text-chalk">Ask about Minh</h2><p class="font-mono text-xs uppercase tracking-[0.1em] text-fog">Checked answers only</p></div><div class="flex items-center gap-1"><button type="button" class="chat-icon" aria-label="Start over" title="Start over"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8a5 5 0 1 0 1.6-3.7M3 2.5v2.8h2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button type="button" class="chat-icon" aria-label="Close chat" title="Close"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></button></div></div><div class="chat-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0" aria-label="Conversation"></div><form class="flex items-center gap-2 border-t border-white/10 p-3"><label for="chat-input" class="sr-only">Type a question about Minh</label><input id="chat-input" placeholder="Ask anything about Minh" autoComplete="off" maxLength="300" class="chat-input" value=""/><button type="submit" class="chat-send" aria-label="Send" disabled=""><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5L14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></form></section><!--astro:end--></astro-island><footer class="mt-32 border-t border-rule bg-night"><div class="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.2fr_1fr] md:px-8"><div><p class="display text-4xl md:text-5xl">How to read the numbers here.</p><p class="mt-4 max-w-[52ch] text-mist">Every figure on this site carries a stamp that says how I know it. If a number came from a test with five people, it says so. If it is someone’s estimate, it says whose.</p></div><dl class="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2"><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="live">Live</span></dt><dd class="text-sm text-fog">Measured in production</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="tested">Tested</span></dt><dd class="text-sm text-fog">Measured in usability testing, with sample size</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="modelled">Modelled</span></dt><dd class="text-sm text-fog">Calculated from stated assumptions</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="estimate">Estimate</span></dt><dd class="text-sm text-fog">Someone’s judgement, and I say whose</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="record">Record</span></dt><dd class="text-sm text-fog">A count of real artefacts</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="progress">In progress</span></dt><dd class="text-sm text-fog">Not shipped yet</dd></div><div class="flex items-start gap-3"><dt class="shrink-0 pt-0.5"><span class="stamp" data-k="target">Target</span></dt><dd class="text-sm text-fog">A goal set before launch, not a result</dd></div></dl></div><div class="mx-auto flex max-w-6xl flex-col gap-3 border-t border-rule px-5 py-8 text-sm text-fog md:flex-row md:items-center md:justify-between md:px-8"><p>The detail of my NAB work sits behind a password. Ask me for it.</p><p>No cookies, no trackers. <a href="about.html#accessibility">Accessibility</a>. © 2026 Minh Nguyen</p></div></footer></body></html>
