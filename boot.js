@@ -50,9 +50,12 @@
     if (!r) return;
     r.setAttribute('data-bound', '');
     var links = r.querySelectorAll('a[data-ch]'), chs = [], fill = r.querySelector('[data-fill]'), queued = false;
-    for (var i = 0; i < links.length; i++) chs.push(document.getElementById(links[i].getAttribute('data-ch')));
+    // On a locked case the chapters arrive with the password, so look them up again until they exist.
+    function find() { chs = []; for (var i = 0; i < links.length; i++) chs.push(document.getElementById(links[i].getAttribute('data-ch'))); }
+    find();
     function update() {
       queued = false;
+      if (!chs[0]) find();
       var vh = innerHeight, mark = vh * 0.4, cur = -1, stage = false;
       for (var i = 0; i < chs.length; i++) if (chs[i] && chs[i].getBoundingClientRect().top <= mark) cur = i;
       for (var j = 0; j < links.length; j++) { if (j === cur) links[j].setAttribute('aria-current', 'location'); else links[j].removeAttribute('aria-current'); }
@@ -69,8 +72,20 @@
     function queue() { if (!queued) { queued = true; requestAnimationFrame(update); } }
     addEventListener('scroll', queue, { passive: true });
     addEventListener('resize', queue);
+    addEventListener('mn-unlocked', queue);
     update();
   }
+  // Before the password, the chapter links have nowhere to go: take the reader to the password field instead.
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1), pass = document.getElementById('pass');
+    if (!id || document.getElementById(id) || !pass) return;
+    e.preventDefault();
+    var panel = document.getElementById('lock-screen') || pass;
+    panel.scrollIntoView({ block: 'center', behavior: d.classList.contains('calm') ? 'auto' : 'smooth' });
+    pass.focus({ preventScroll: true });
+  });
   // Open each page at the top. Some hosts carry the last page's scroll position into the next page,
   // which dropped visitors at the end of a case. Back and forward, and links to a section, keep the browser's behaviour.
   (function () {
