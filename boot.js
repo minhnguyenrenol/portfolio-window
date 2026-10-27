@@ -86,6 +86,27 @@
     panel.scrollIntoView({ block: 'center', behavior: d.classList.contains('calm') ? 'auto' : 'smooth' });
     pass.focus({ preventScroll: true });
   });
+  // A real screen inside a locked case has no file to link to (it is inlined in the encrypted page), so its
+  // "Open full size" link shows the picture at its own size in a dialog, scrollable, closed with Esc or the button.
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[data-full]') : null;
+    if (!a) return;
+    var f = a.closest('figure'), img = f && f.querySelector('img');
+    if (!img) return;
+    e.preventDefault();
+    var dlg = document.getElementById('full-view');
+    if (!dlg) {
+      dlg = document.createElement('dialog');
+      dlg.id = 'full-view'; dlg.className = 'full-view'; dlg.setAttribute('aria-label', 'Picture at full size');
+      dlg.innerHTML = '<button type="button" class="full-close">Close</button><img alt="" />';
+      dlg.querySelector('button').addEventListener('click', function () { dlg.close(); });
+      dlg.addEventListener('click', function (ev) { if (ev.target === dlg) dlg.close(); });
+      document.body.appendChild(dlg);
+    }
+    var big = dlg.querySelector('img');
+    big.src = img.currentSrc || img.src; big.alt = img.alt;
+    dlg.showModal();
+  });
   // Open each page at the top. Some hosts carry the last page's scroll position into the next page,
   // which dropped visitors at the end of a case. Back and forward, and links to a section, keep the browser's behaviour.
   (function () {
