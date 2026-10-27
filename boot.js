@@ -1,17 +1,16 @@
 (function () {
   var d = document.documentElement;
   d.classList.add('js');
-  // Calm mode (no moving scenery): the system's reduced-motion setting, unless the visitor chose otherwise
-  // with the header's "Pause motion" button (src/lib/calm.ts stores that choice).
-  var RM = null; try { RM = matchMedia('(prefers-reduced-motion: reduce)'); } catch (e) {}
+  // Calm mode (no moving scenery) is the visitor's choice, made with the header's "Pause motion" button
+  // and remembered in this browser (src/lib/calm.ts). Motion plays by default, Minh's call: a device set to
+  // reduce motion gets a note offering the pause instead (src/components/MotionNote.tsx).
   function wantCalm() {
     var s = null; try { s = localStorage.getItem('mn-motion'); } catch (e) {}
-    if (s === 'off') return true;
-    if (s === 'on') return false;
-    return !!(RM && RM.matches);
+    return s === 'off';
   }
   if (wantCalm()) d.classList.add('calm');
-  if (RM && RM.addEventListener) RM.addEventListener('change', function () { d.classList.toggle('calm', wantCalm()); dispatchEvent(new Event('mn-calm')); });
+  // A saved case password opens the case straight away, so the lock screen says so instead of asking.
+  try { if (sessionStorage.getItem('mn-pass')) d.classList.add('has-pass'); } catch (e) {}
   // Never leave content hidden if an island fails to start.
   setTimeout(function () { d.classList.add('settled'); }, 5000);
   // Prototype recordings: muted loops that play only while on screen. Each has a Pause button next to it

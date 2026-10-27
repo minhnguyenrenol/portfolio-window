@@ -1,0 +1,1 @@
+import{o as e,t}from"./react.D50QREaB.js";var n=e(t(),1);function r(e,t,r){(0,n.useInsertionEffect)(()=>e.on(t,r),[e,t,r])}export{r as t};
