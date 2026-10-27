@@ -43,6 +43,34 @@
       }, { threshold: [0, 0.35, 0.7] }).observe(v);
     })(vids[i]);
   }
+  // A case told as one story has a chapter rail beside it on wide screens. It marks the chapter being read,
+  // fills a line as the reader goes, and steps aside before the first chapter and while the 3D set piece plays.
+  function rail() {
+    var r = document.querySelector('[data-rail]:not([data-bound])');
+    if (!r) return;
+    r.setAttribute('data-bound', '');
+    var links = r.querySelectorAll('a[data-ch]'), chs = [], fill = r.querySelector('[data-fill]'), queued = false;
+    for (var i = 0; i < links.length; i++) chs.push(document.getElementById(links[i].getAttribute('data-ch')));
+    function update() {
+      queued = false;
+      var vh = innerHeight, mark = vh * 0.4, cur = -1, stage = false;
+      for (var i = 0; i < chs.length; i++) if (chs[i] && chs[i].getBoundingClientRect().top <= mark) cur = i;
+      for (var j = 0; j < links.length; j++) { if (j === cur) links[j].setAttribute('aria-current', 'location'); else links[j].removeAttribute('aria-current'); }
+      var first = chs[0], last = chs[chs.length - 1];
+      if (first && last && fill) {
+        var a = first.getBoundingClientRect().top, b = last.getBoundingClientRect().bottom;
+        fill.style.transform = 'scaleY(' + Math.min(1, Math.max(0, (mark - a) / Math.max(1, b - a))).toFixed(4) + ')';
+      }
+      var st = document.querySelectorAll('.story [data-stage]');
+      for (var k = 0; k < st.length; k++) { var q = st[k].getBoundingClientRect(); if (q.top < vh * 0.5 && q.bottom > vh * 0.5) stage = true; }
+      var done = last && last.getBoundingClientRect().bottom < mark;
+      r.classList.toggle('quiet', cur < 0 || stage || done);
+    }
+    function queue() { if (!queued) { queued = true; requestAnimationFrame(update); } }
+    addEventListener('scroll', queue, { passive: true });
+    addEventListener('resize', queue);
+    update();
+  }
   // Open each page at the top. Some hosts carry the last page's scroll position into the next page,
   // which dropped visitors at the end of a case. Back and forward, and links to a section, keep the browser's behaviour.
   (function () {
@@ -60,6 +88,7 @@
     addEventListener('load', top);
     setTimeout(top, 250); setTimeout(top, 900);
   })();
-  document.addEventListener('DOMContentLoaded', bind);
-  setInterval(bind, 1500); // recordings inside a case that is unlocked later
+  function bindAll() { bind(); rail(); }
+  document.addEventListener('DOMContentLoaded', bindAll);
+  setInterval(bindAll, 1500); // recordings and the chapter rail inside a case that is unlocked later
 })();
