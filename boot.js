@@ -13,6 +13,10 @@
   try { if (sessionStorage.getItem('mn-pass')) d.classList.add('has-pass'); } catch (e) {}
   // Never leave content hidden if an island fails to start.
   setTimeout(function () { d.classList.add('settled'); }, 5000);
+  // If a saved password hasn't opened the case within 8 seconds, show the password box again.
+  setTimeout(function () { if (!document.querySelector('#locked-content.unlocked')) d.classList.remove('has-pass'); }, 8000);
+  // The password form only works once its script is running; until then, a submit does nothing instead of reloading.
+  document.addEventListener('submit', function (e) { var t = e.target; if (t && t.closest && t.closest('#lock-screen')) e.preventDefault(); }, true);
   // Prototype recordings: muted loops that play only while on screen. Each has a Pause button next to it
   // (it moves for more than five seconds). In calm mode they stay on the poster until someone presses Play.
   function bind() {
