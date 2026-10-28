@@ -27,6 +27,27 @@
       if (wide && !el.hasAttribute('tabindex')) { el.setAttribute('tabindex', '0'); el.setAttribute('role', 'region'); el.setAttribute('aria-label', 'Table, scrolls sideways'); }
       else if (!wide && el.hasAttribute('tabindex')) { el.removeAttribute('tabindex'); el.removeAttribute('role'); el.removeAttribute('aria-label'); }
     }
+    // A sideways strip of screens: Previous and Next move it by most of a screen and say when they reach an end.
+    var navs = document.querySelectorAll('[data-strip-nav]:not([data-bound])');
+    for (var n = 0; n < navs.length; n++) (function (nav) {
+      nav.setAttribute('data-bound', '');
+      var s = document.getElementById(nav.getAttribute('data-strip-nav'));
+      var prev = nav.querySelector('[data-strip-prev]'), next = nav.querySelector('[data-strip-next]');
+      if (!s || !prev || !next) return;
+      function step(dir) {
+        var still = d.classList.contains('calm') || matchMedia('(prefers-reduced-motion: reduce)').matches;
+        s.scrollBy({ left: dir * Math.max(240, s.clientWidth * 0.75), behavior: still ? 'auto' : 'smooth' });
+      }
+      function ends() {
+        prev.setAttribute('aria-disabled', String(s.scrollLeft <= 2));
+        next.setAttribute('aria-disabled', String(s.scrollLeft >= s.scrollWidth - s.clientWidth - 2));
+      }
+      prev.addEventListener('click', function () { step(-1); });
+      next.addEventListener('click', function () { step(1); });
+      s.addEventListener('scroll', ends, { passive: true });
+      addEventListener('resize', ends);
+      ends();
+    })(navs[n]);
     var vids = document.querySelectorAll('video[data-loop]:not([data-bound])');
     for (var i = 0; i < vids.length; i++) (function (v) {
       v.setAttribute('data-bound', ''); v.muted = true;
