@@ -1,0 +1,1 @@
+var e=!1,t=new Set,n=()=>e;function r(n){e=n,document.documentElement.classList.toggle(`webgl`,n),t.forEach(e=>e(n))}function i(e){return t.add(e),()=>{t.delete(e)}}export{r as n,n as r,i as t};
